@@ -362,7 +362,7 @@ function buildFollowUpAddendum(languageCode) {
 
 function buildChatGPTReadAloudPrompt() {
   const patientText = buildPatientText();
-  return `請用自然、清楚、溫和、適合醫療溝通的語氣，用${languages[state.selectedLanguage]}朗讀以下內容給病人聽。請速度稍慢，讓病人容易理解：\n\n${patientText}`;
+  return `請用自然、清楚、溫和、適合醫療溝通的語氣，用${languages[state.selectedLanguage]}朗讀以下內容給病人聽。請速度稍慢，讓病人容易理解（產生之文字稿請勿包含中文內容，以方便後續直接朗讀）：\n\n${patientText}`;
 }
 
 function updateOutput() {
