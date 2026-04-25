@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="皮膚科多語病情說明與朗讀工具，支援固定模板、搜尋、多語字幕與 ChatGPT 朗讀稿複製。">
+  <title>皮膚科多語病情說明與朗讀工具</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Dermatology Explain PWA</p>
+      <h1><span>皮膚科多語病情</span><span>說明與朗讀工具</span></h1>
+      <p class="subtitle">固定模板資料庫、病人字幕、ChatGPT App 朗讀稿，一頁完成。</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="panel" aria-labelledby="language-title">
+      <div class="section-title">
+        <span class="step">1</span>
+        <h2 id="language-title">語言選擇</h2>
+      </div>
+      <div id="languageSelector" class="language-grid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="category-title">
+      <div class="section-title">
+        <span class="step">2</span>
+        <h2 id="category-title">皮膚病分類</h2>
+      </div>
+      <div id="categoryFilter" class="chip-row"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="search-title">
+      <div class="section-title">
+        <span class="step">3</span>
+        <h2 id="search-title">病情模板搜尋</h2>
+      </div>
+      <label class="search-box">
+        <span>搜尋中文病名、分類、tag 或治療關鍵字</span>
+        <input id="searchInput" type="search" inputmode="search" placeholder="例如：病毒疣、冷凍、類固醇、黴菌、掉髮">
+      </label>
+    </section>
+
+    <section class="panel" aria-labelledby="condition-title">
+      <div class="section-title">
+        <span class="step">4</span>
+        <h2 id="condition-title">病情模板選擇</h2>
+      </div>
+      <p id="resultCount" class="muted"></p>
+      <div id="conditionList" class="condition-list"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="treatment-title">
+      <div class="section-title">
+        <span class="step">5</span>
+        <h2 id="treatment-title">治療方式調整</h2>
+      </div>
+      <div id="treatmentControls" class="treatment-controls"></div>
+    </section>
+
+    <section class="panel output-panel" aria-labelledby="patient-title">
+      <div class="section-title">
+        <span class="step">6</span>
+        <h2 id="patient-title">病人說明字幕區</h2>
+      </div>
+      <div class="toolbar">
+        <button id="bilingualToggle" class="secondary-button" type="button">中文對照：關</button>
+        <button id="copyPatientButton" type="button">複製病人說明</button>
+        <button id="clearButton" class="danger-button" type="button">清空</button>
+      </div>
+      <article id="patientOutput" class="output-text" aria-live="polite">請先選擇語言與病情模板。</article>
+    </section>
+
+    <section class="panel output-panel" aria-labelledby="read-title">
+      <div class="section-title">
+        <span class="step">7</span>
+        <h2 id="read-title">ChatGPT 朗讀文字區</h2>
+      </div>
+      <div class="toolbar">
+        <button id="copyReadButton" type="button">複製給 ChatGPT 朗讀</button>
+        <button id="togglePromptButton" class="secondary-button" type="button">顯示／隱藏朗讀提示</button>
+      </div>
+      <article id="readPromptOutput" class="output-text compact" aria-live="polite"></article>
+    </section>
+
+    <section class="panel note-panel" aria-labelledby="add-title">
+      <div class="section-title">
+        <span class="step">8</span>
+        <h2 id="add-title">如何新增皮膚病模板</h2>
+      </div>
+      <ol class="plain-list">
+        <li>用 ChatGPT 產生新的 <code>conditionTemplates</code> JavaScript 物件。</li>
+        <li>醫師確認醫療內容與翻譯後，貼到 <code>conditions.js</code>。</li>
+        <li>推送到 GitHub 後，GitHub Pages 會更新網站。</li>
+      </ol>
+    </section>
+
+    <section class="safety-panel" aria-labelledby="safe-title">
+      <h2 id="safe-title">安全提醒</h2>
+      <p>本工具僅供皮膚科臨床溝通輔助，不能取代醫師判斷。請依實際病情調整說明內容。請勿輸入病人姓名、身分證字號、病歷號、生日或其他可識別個資。</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./conditions.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
