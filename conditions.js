@@ -18,11 +18,11 @@ const languageText = {
     urgent: "Datang lebih awal bila nyeri berat, bengkak makin luas, bernanah, demam, sesak napas, atau muncul tanda alergi obat.",
     template: (d) => ({
       summary: `Kondisi kulit Anda adalah ${d.names.id}.`,
-      explanation: `${d.explain.id} ${d.contagious ? languageText.id.contagiousYes : languageText.id.contagiousNo} Tujuan pengobatan adalah mengurangi gejala, membantu kulit pulih, dan menurunkan risiko kambuh atau menyebar. Perubahan biasanya tidak langsung hilang dalam satu hari, jadi respons perlu diamati beberapa waktu.`,
-      treatment: `${d.treat.id} Gunakan obat sesuai petunjuk dokter, jangan menambah atau menghentikan obat sendiri.`,
-      homeCare: `${d.care.id} Hindari menggaruk atau menggosok terlalu keras.`,
-      warning: `${d.warn.id} ${languageText.id.urgent}`,
-      followUp: `${d.follow.id} ${languageText.id.follow}`
+      explanation: `${d.explain.id} ${d.contagious ? languageText.id.contagiousYes : languageText.id.contagiousNo}`,
+      treatment: d.treat.id,
+      homeCare: d.care.id,
+      warning: d.warn.id,
+      followUp: d.follow.id
     })
   },
   en: {
@@ -33,11 +33,11 @@ const languageText = {
     urgent: "Come back earlier if you have severe pain, spreading redness or swelling, pus, fever, breathing difficulty, or signs of drug allergy.",
     template: (d) => ({
       summary: `Your skin condition is ${d.names.en}.`,
-      explanation: `${d.explain.en} ${d.contagious ? languageText.en.contagiousYes : languageText.en.contagiousNo} The goal of treatment is to reduce symptoms, help the skin recover, and lower the chance of recurrence or spread. Skin changes usually do not disappear in one day, so we need to watch the response over time.`,
-      treatment: `${d.treat.en} Please use the medicine as directed and do not change it by yourself.`,
-      homeCare: `${d.care.en} Avoid scratching, picking, or harsh rubbing.`,
-      warning: `${d.warn.en} ${languageText.en.urgent}`,
-      followUp: `${d.follow.en} ${languageText.en.follow}`
+      explanation: `${d.explain.en} ${d.contagious ? languageText.en.contagiousYes : languageText.en.contagiousNo}`,
+      treatment: d.treat.en,
+      homeCare: d.care.en,
+      warning: d.warn.en,
+      followUp: d.follow.en
     })
   },
   vi: {
@@ -48,11 +48,11 @@ const languageText = {
     urgent: "Hãy tái khám sớm nếu đau nhiều, đỏ sưng lan rộng, có mủ, sốt, khó thở hoặc có dấu hiệu dị ứng thuốc.",
     template: (d) => ({
       summary: `Tình trạng da của bạn là ${d.names.vi}.`,
-      explanation: `${d.explain.vi} ${d.contagious ? languageText.vi.contagiousYes : languageText.vi.contagiousNo} Mục tiêu điều trị là giảm triệu chứng, giúp da hồi phục và giảm nguy cơ tái phát hoặc lan rộng. Thay đổi trên da thường không biến mất trong một ngày, nên cần theo dõi đáp ứng theo thời gian.`,
-      treatment: `${d.treat.vi} Hãy dùng thuốc đúng theo hướng dẫn của bác sĩ, không tự ý đổi thuốc.`,
-      homeCare: `${d.care.vi} Tránh gãi, nặn hoặc chà xát mạnh.`,
-      warning: `${d.warn.vi} ${languageText.vi.urgent}`,
-      followUp: `${d.follow.vi} ${languageText.vi.follow}`
+      explanation: `${d.explain.vi} ${d.contagious ? languageText.vi.contagiousYes : languageText.vi.contagiousNo}`,
+      treatment: d.treat.vi,
+      homeCare: d.care.vi,
+      warning: d.warn.vi,
+      followUp: d.follow.vi
     })
   },
   th: {
@@ -63,11 +63,11 @@ const languageText = {
     urgent: "ควรมาพบแพทย์ก่อนนัดถ้าปวดมาก แดงบวมลาม มีหนอง มีไข้ หายใจลำบาก หรือมีอาการแพ้ยา",
     template: (d) => ({
       summary: `ปัญหาผิวหนังของคุณคือ ${d.names.th}`,
-      explanation: `${d.explain.th} ${d.contagious ? languageText.th.contagiousYes : languageText.th.contagiousNo} เป้าหมายของการรักษาคือ ลดอาการ ช่วยให้ผิวฟื้นตัว และลดโอกาสเป็นซ้ำหรือแพร่กระจาย การเปลี่ยนแปลงของผิวมักไม่หายในวันเดียว จึงต้องติดตามการตอบสนองสักระยะ`,
-      treatment: `${d.treat.th} ใช้ยาตามคำแนะนำของแพทย์ และอย่าเปลี่ยนยาเอง`,
-      homeCare: `${d.care.th} หลีกเลี่ยงการเกา แกะ หรือถูแรง ๆ`,
-      warning: `${d.warn.th} ${languageText.th.urgent}`,
-      followUp: `${d.follow.th} ${languageText.th.follow}`
+      explanation: `${d.explain.th} ${d.contagious ? languageText.th.contagiousYes : languageText.th.contagiousNo}`,
+      treatment: d.treat.th,
+      homeCare: d.care.th,
+      warning: d.warn.th,
+      followUp: d.follow.th
     })
   },
   ja: {
@@ -78,11 +78,11 @@ const languageText = {
     urgent: "強い痛み、赤みや腫れの拡大、膿、発熱、息苦しさ、薬のアレルギー症状があれば早めに受診してください。",
     template: (d) => ({
       summary: `あなたの皮膚の状態は「${d.names.ja}」です。`,
-      explanation: `${d.explain.ja} ${d.contagious ? languageText.ja.contagiousYes : languageText.ja.contagiousNo} 治療の目的は、症状を抑え、皮膚の回復を助け、再発や広がりを減らすことです。皮膚の変化は通常1日で消えるものではないため、しばらく経過を見ながら調整します。`,
-      treatment: `${d.treat.ja} 薬は医師の指示どおり使い、自己判断で変更しないでください。`,
-      homeCare: `${d.care.ja} かいたり、つぶしたり、強くこすったりしないでください。`,
-      warning: `${d.warn.ja} ${languageText.ja.urgent}`,
-      followUp: `${d.follow.ja} ${languageText.ja.follow}`
+      explanation: `${d.explain.ja} ${d.contagious ? languageText.ja.contagiousYes : languageText.ja.contagiousNo}`,
+      treatment: d.treat.ja,
+      homeCare: d.care.ja,
+      warning: d.warn.ja,
+      followUp: d.follow.ja
     })
   },
   ko: {
@@ -93,11 +93,11 @@ const languageText = {
     urgent: "통증이 심하거나 붉음과 부기가 퍼짐, 고름, 발열, 호흡곤란, 약물 알레르기 증상이 있으면 더 일찍 내원하세요.",
     template: (d) => ({
       summary: `당신의 피부 상태는 ${d.names.ko}입니다.`,
-      explanation: `${d.explain.ko} ${d.contagious ? languageText.ko.contagiousYes : languageText.ko.contagiousNo} 치료의 목표는 증상을 줄이고 피부 회복을 돕고 재발이나 번짐을 낮추는 것입니다. 피부 변화는 보통 하루 만에 없어지지 않으므로 일정 기간 반응을 보며 조절해야 합니다.`,
-      treatment: `${d.treat.ko} 약은 의사의 지시에 따라 사용하고 임의로 바꾸지 마세요.`,
-      homeCare: `${d.care.ko} 긁거나 짜거나 세게 문지르지 마세요.`,
-      warning: `${d.warn.ko} ${languageText.ko.urgent}`,
-      followUp: `${d.follow.ko} ${languageText.ko.follow}`
+      explanation: `${d.explain.ko} ${d.contagious ? languageText.ko.contagiousYes : languageText.ko.contagiousNo}`,
+      treatment: d.treat.ko,
+      homeCare: d.care.ko,
+      warning: d.warn.ko,
+      followUp: d.follow.ko
     })
   }
 };
@@ -105,11 +105,11 @@ const languageText = {
 function makeZh(d) {
   return {
     summary: `你的皮膚狀況是${d.titleZh}。`,
-    explanation: `${d.zhExplain}${d.contagious ? "這個狀況可能傳染給自己身體其他部位，也可能傳染給別人。" : "這個狀況通常不會傳染給別人。"}治療目標是減少症狀、讓皮膚穩定修復，並降低復發或擴散機會。皮膚變化通常不會一天就完全消失，需要觀察一段時間再依反應調整。`,
-    treatment: `${d.zhTreat}請依照醫師指示使用藥物，不要自行加量、停藥或混用來路不明的藥。`,
-    homeCare: `${d.zhCare}請避免搔抓、摳挖或過度清潔，以免刺激皮膚或造成感染。`,
-    warning: `${d.zhWarn}如果疼痛明顯、紅腫擴大、化膿、發燒、呼吸不適或懷疑藥物過敏，請提早回診或就醫。`,
-    followUp: `${d.zhFollow}請依醫師安排定期回診，讓治療可以依反應調整。`
+    explanation: `${d.zhExplain}${d.contagious ? "這個狀況可能傳染給自己身體其他部位，也可能傳染給別人。" : "這個狀況通常不會傳染給別人。"}`,
+    treatment: d.zhTreat,
+    homeCare: d.zhCare,
+    warning: d.zhWarn,
+    followUp: d.zhFollow
   };
 }
 
@@ -264,6 +264,105 @@ const followLong = commonFollow({
   ko: "재발하거나 오래갈 수 있어 정기적인 추적 진료가 중요합니다."
 });
 
+const antibioticCourseTreat = commonTreat({
+  id: "antibiotik oles atau minum. Bila dokter memberi antibiotik minum, minum tepat waktu dan habiskan sesuai resep meskipun sudah membaik",
+  en: "topical or oral antibiotics. If oral antibiotics are prescribed, take them on time and finish the course even if the skin looks better",
+  vi: "kháng sinh bôi hoặc uống. Nếu được kê kháng sinh uống, hãy uống đúng giờ và dùng hết liệu trình dù da đã khá hơn",
+  th: "ยาปฏิชีวนะแบบทาหรือกิน หากแพทย์ให้ยากิน ให้กินตรงเวลาและกินให้ครบ แม้อาการจะดีขึ้นแล้ว",
+  ja: "外用または内服抗菌薬です。内服抗菌薬が出た場合は、良くなっても指示どおり最後まで飲んでください",
+  ko: "바르는 또는 먹는 항생제입니다. 먹는 항생제를 처방받았다면 좋아져도 정해진 기간 끝까지 복용하세요"
+});
+
+const antibioticCourseWarn = commonWarn({
+  id: "Jangan menghentikan antibiotik sendiri dan jangan menyimpan sisa obat untuk dipakai lain kali.",
+  en: "Do not stop antibiotics by yourself, and do not save leftover antibiotics for later use.",
+  vi: "Không tự ý ngưng kháng sinh và không để thuốc còn lại dùng cho lần sau.",
+  th: "อย่าหยุดยาปฏิชีวนะเอง และอย่าเก็บยาที่เหลือไว้ใช้ครั้งต่อไป",
+  ja: "抗菌薬を自己判断で中止せず、残った薬を次回用に取っておかないでください。",
+  ko: "항생제를 임의로 중단하지 말고 남은 약을 다음에 쓰려고 보관하지 마세요."
+});
+
+const returnIfWorseWarn = commonWarn({
+  id: "Kontrol lebih awal bila ruam bertambah banyak, makin nyeri, bernanah, atau tidak membaik setelah memakai obat sesuai petunjuk.",
+  en: "Come back earlier if the bumps increase, become more painful, form pus, or do not improve after using medicine as directed.",
+  vi: "Tái khám sớm nếu nốt nổi nhiều hơn, đau hơn, có mủ hoặc không cải thiện sau khi dùng thuốc đúng hướng dẫn.",
+  th: "ควรมาก่อนนัดถ้าผื่นเพิ่มขึ้น ปวดมากขึ้น มีหนอง หรือไม่ดีขึ้นหลังใช้ยาตามคำแนะนำ",
+  ja: "発疹が増える、痛みが強くなる、膿が出る、または指示どおり薬を使っても改善しない場合は早めに受診してください。",
+  ko: "병변이 늘거나 더 아프거나 고름이 생기거나 지시대로 약을 써도 좋아지지 않으면 더 일찍 내원하세요."
+});
+
+const zosterTreat = commonTreat({
+  id: "obat antivirus dan obat nyeri. Obat antivirus paling baik dimulai dalam 72 jam setelah ruam muncul",
+  en: "antiviral medicine and pain control. Antiviral medicine works best when started within 72 hours after the rash appears",
+  vi: "thuốc kháng vi-rút và giảm đau. Thuốc kháng vi-rút hiệu quả nhất khi bắt đầu trong vòng 72 giờ sau khi phát ban",
+  th: "ยาต้านไวรัสและยาแก้ปวด ยาต้านไวรัสได้ผลดีที่สุดเมื่อเริ่มภายใน 72 ชั่วโมงหลังผื่นขึ้น",
+  ja: "抗ウイルス薬と痛み止めです。発疹が出てから72時間以内に始めると効果が最も期待できます",
+  ko: "항바이러스제와 통증 조절입니다. 발진이 생긴 뒤 72시간 안에 시작할수록 효과가 좋습니다"
+});
+
+const zosterWarn = commonWarn({
+  id: "Bila ruam berada di sekitar mata, dahi, atau ujung hidung, segera kontrol karena dapat memengaruhi mata.",
+  en: "If the rash is near the eye, forehead, or tip of the nose, seek care promptly because the eye can be affected.",
+  vi: "Nếu phát ban ở quanh mắt, trán hoặc đầu mũi, hãy tái khám sớm vì có thể ảnh hưởng đến mắt.",
+  th: "ถ้าผื่นอยู่รอบตา หน้าผาก หรือปลายจมูก ควรพบแพทย์เร็ว เพราะอาจกระทบตาได้",
+  ja: "目の周り、額、鼻先に発疹がある場合は、目に影響することがあるため早めに受診してください。",
+  ko: "눈 주위, 이마, 코끝에 발진이 있으면 눈에 영향을 줄 수 있으니 빨리 진료를 받으세요."
+});
+
+const tineaTreat = commonTreat({
+  id: "obat antijamur. Gunakan sampai selesai sesuai arahan, biasanya tetap dilanjutkan sebentar setelah gejala membaik",
+  en: "antifungal medicine. Use it for the full period as directed, usually continuing for a short time after symptoms improve",
+  vi: "thuốc kháng nấm. Dùng đủ thời gian theo hướng dẫn, thường tiếp tục thêm một thời gian sau khi triệu chứng cải thiện",
+  th: "ยาต้านเชื้อรา ใช้ให้ครบตามคำแนะนำ โดยมักต้องใช้ต่ออีกระยะหลังอาการดีขึ้น",
+  ja: "抗真菌薬です。症状が良くなっても、指示された期間は続けてください",
+  ko: "항진균제입니다. 증상이 좋아져도 지시받은 기간 동안 계속 사용하세요"
+});
+
+const tineaCare = commonCare({
+  id: "Jaga area tetap kering, ganti pakaian yang basah oleh keringat, dan jangan memakai krim yang tidak jelas tanpa arahan dokter.",
+  en: "Keep the area dry, change sweaty clothes, and do not use unknown creams without medical advice.",
+  vi: "Giữ vùng da khô, thay quần áo ướt mồ hôi và không tự dùng kem không rõ loại.",
+  th: "รักษาบริเวณนั้นให้แห้ง เปลี่ยนเสื้อผ้าที่เปียกเหงื่อ และอย่าใช้ครีมที่ไม่ทราบชนิดเอง",
+  ja: "患部を乾燥させ、汗で濡れた衣類は替え、よく分からないクリームを自己判断で使わないでください。",
+  ko: "부위를 건조하게 유지하고 땀에 젖은 옷은 갈아입으며, 알 수 없는 크림을 임의로 바르지 마세요."
+});
+
+const tineaWarn = commonWarn({
+  id: "Kontrol kembali bila ruam makin luas, makin nyeri, bernanah, atau terus kambuh.",
+  en: "Come back if the rash spreads, becomes more painful, forms pus, or keeps coming back.",
+  vi: "Tái khám nếu vùng da lan rộng, đau hơn, có mủ hoặc cứ tái phát.",
+  th: "กลับมาตรวจถ้าผื่นลาม ปวดมากขึ้น มีหนอง หรือเป็นซ้ำบ่อย",
+  ja: "発疹が広がる、痛みが強くなる、膿が出る、または繰り返す場合は再診してください。",
+  ko: "발진이 퍼지거나 더 아프거나 고름이 생기거나 계속 재발하면 다시 내원하세요."
+});
+
+const scabiesTreat = commonTreat({
+  id: "obat oles khusus. Oleskan sesuai arahan dokter ke seluruh area yang ditentukan, biarkan 8 sampai 12 jam, lalu bilas",
+  en: "a specific topical medicine. Apply it to all instructed areas, leave it on for 8 to 12 hours, then wash it off",
+  vi: "thuốc bôi đặc trị. Bôi lên toàn bộ vùng được hướng dẫn, để 8 đến 12 giờ rồi rửa sạch",
+  th: "ยาทาเฉพาะสำหรับหิด ทาตามบริเวณที่แพทย์แนะนำ ทิ้งไว้ 8 ถึง 12 ชั่วโมงแล้วล้างออก",
+  ja: "専用の外用薬です。指示された範囲に塗り、8から12時間置いてから洗い流してください",
+  ko: "전용 바르는 약입니다. 지시받은 부위 전체에 바르고 8-12시간 둔 뒤 씻어내세요"
+});
+
+const scabiesCare = commonCare({
+  id: "Orang serumah atau kontak dekat mungkin perlu diobati bersamaan. Cuci pakaian, seprai, dan handuk dengan air panas, atau simpan tertutup rapat setidaknya 72 jam.",
+  en: "Household members or close contacts may need treatment at the same time. Wash clothes, bedding, and towels in hot water, or seal items in a bag for at least 72 hours.",
+  vi: "Người sống chung hoặc tiếp xúc gần có thể cần điều trị cùng lúc. Giặt quần áo, ga giường và khăn bằng nước nóng, hoặc đóng kín trong túi ít nhất 72 giờ.",
+  th: "คนในบ้านหรือผู้สัมผัสใกล้ชิดอาจต้องรักษาพร้อมกัน ซักเสื้อผ้า ผ้าปู และผ้าเช็ดตัวด้วยน้ำร้อน หรือปิดถุงไว้อย่างน้อย 72 ชั่วโมง",
+  ja: "同居者や濃厚接触者も同時に治療が必要なことがあります。衣類、寝具、タオルは熱いお湯で洗うか、袋に密閉して少なくとも72時間置いてください。",
+  ko: "동거인이나 밀접 접촉자도 동시에 치료가 필요할 수 있습니다. 옷, 침구, 수건은 뜨거운 물로 세탁하거나 최소 72시간 밀봉하세요."
+});
+
+const scabiesWarn = commonWarn({
+  id: "Gatal dapat tetap ada 2 sampai 4 minggu setelah terapi. Bila muncul banyak ruam baru atau ada nanah, kontrol kembali.",
+  en: "Itching can continue for 2 to 4 weeks after treatment. Come back if many new bumps appear or pus develops.",
+  vi: "Ngứa có thể còn kéo dài 2 đến 4 tuần sau điều trị. Tái khám nếu nổi nhiều nốt mới hoặc có mủ.",
+  th: "อาการคันอาจอยู่ต่อได้ 2 ถึง 4 สัปดาห์หลังรักษา หากมีผื่นใหม่จำนวนมากหรือมีหนอง ให้กลับมาตรวจ",
+  ja: "治療後も2から4週間かゆみが残ることがあります。新しい発疹が多数出る、膿が出る場合は再診してください。",
+  ko: "치료 후에도 가려움은 2-4주 지속될 수 있습니다. 새 병변이 많이 생기거나 고름이 나면 다시 내원하세요."
+});
+
 function item(id, category, titleZh, names, cause, treat, options = {}) {
   return makeCondition({
     id,
@@ -291,12 +390,12 @@ function item(id, category, titleZh, names, cause, treat, options = {}) {
 
 const conditionTemplates = [
   item("acne_vulgaris", "痤瘡與毛囊相關疾病", "青春痘／痤瘡", { id: "jerawat", en: "acne", vi: "mụn trứng cá", th: "สิว", ja: "にきび", ko: "여드름" }, causes.pore, treatmentKinds.acne, { severity: "常見慢性皮膚病", tags: ["青春痘", "痤瘡", "粉刺", "毛囊", "發炎", "外用藥"], zhCause: "毛孔阻塞、皮脂分泌、細菌與發炎反應", zhTreat: "治療可能包含外用藥、口服藥與清潔保養調整。外用藥一開始可能乾燥、脫皮或刺刺的，通常會逐漸適應。", zhCare: "請避免擠痘痘，避免過度清潔，使用溫和洗面乳與不易阻塞毛孔的保濕產品。", zhFollow: "青春痘治療通常需要數週到數月。" }),
-  item("folliculitis", "痤瘡與毛囊相關疾病", "毛囊炎", { id: "folikulitis", en: "folliculitis", vi: "viêm nang lông", th: "รูขุมขนอักเสบ", ja: "毛嚢炎", ko: "모낭염" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["毛囊炎", "毛囊", "膿皰", "抗生素"], contagious: true, care: careInfection, zhCause: "毛囊受到細菌、摩擦、悶熱或刮毛刺激", zhTreat: "治療可能包含外用抗生素、消炎藥，嚴重時可能需要口服抗生素。" }),
-  item("bacterial_pustules", "痤瘡與毛囊相關疾病", "細菌感染的膿皰", { id: "bintil bernanah karena bakteri", en: "bacterial pustules", vi: "mụn mủ do vi khuẩn", th: "ตุ่มหนองจากแบคทีเรีย", ja: "細菌性膿疱", ko: "세균성 농포" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["細菌", "膿皰", "化膿", "抗生素"], contagious: true, care: careInfection, zhCause: "皮膚表層細菌感染與局部發炎", zhTreat: "治療會依範圍與嚴重度使用外用或口服抗生素。" }),
+  item("folliculitis", "痤瘡與毛囊相關疾病", "毛囊炎", { id: "folikulitis", en: "folliculitis", vi: "viêm nang lông", th: "รูขุมขนอักเสบ", ja: "毛嚢炎", ko: "모낭염" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["毛囊炎", "毛囊", "膿皰", "抗生素"], contagious: true, care: careInfection, warn: returnIfWorseWarn, zhCause: "毛囊受到細菌、摩擦、悶熱或刮毛刺激", zhTreat: "治療可能包含外用抗生素、消炎藥，嚴重時可能需要口服抗生素。", zhWarn: "如果規律用藥後仍持續變多、變痛、化膿或反覆復發，請回診讓醫師重新評估治療方式。" }),
+  item("bacterial_pustules", "痤瘡與毛囊相關疾病", "細菌感染的膿皰", { id: "bintil bernanah karena bakteri", en: "bacterial pustules", vi: "mụn mủ do vi khuẩn", th: "ตุ่มหนองจากแบคทีเรีย", ja: "細菌性膿疱", ko: "세균성 농포" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["細菌", "膿皰", "化膿", "抗生素"], contagious: true, treat: antibioticCourseTreat, care: careInfection, warn: antibioticCourseWarn, zhCause: "皮膚表層細菌感染與局部發炎", zhTreat: "治療會依範圍與嚴重度使用外用或口服抗生素。若有口服抗生素，請按時、按劑量、把整個療程吃完；就算紅腫消退或膿排出，也不要自行提早停藥。", zhWarn: "不要把剩下的抗生素留到下次用，也不要分給家人或朋友。" }),
   item("keratosis_pilaris", "痤瘡與毛囊相關疾病", "毛孔角化症", { id: "keratosis pilaris", en: "keratosis pilaris", vi: "dày sừng nang lông", th: "ขนคุดผิวหนัง", ja: "毛孔性苔癬", ko: "모공각화증" }, causes.inflammation, treatmentKinds.observe, { tags: ["毛孔角化", "雞皮", "保濕", "角質"], severity: "常見良性皮膚變化", care: careDry, zhCause: "毛孔角質堆積與皮膚乾燥體質", zhTreat: "治療以保濕、溫和去角質或角質調理外用藥為主，不一定能完全根除。", zhWarn: "過度搓洗或用力去角質反而可能更紅、更粗糙。" }),
-  item("inflamed_epidermal_cyst", "痤瘡與毛囊相關疾病", "皮脂腺囊腫／表皮囊腫發炎", { id: "kista epidermal yang meradang", en: "inflamed epidermal cyst", vi: "nang biểu bì bị viêm", th: "ซีสต์ผิวหนังอักเสบ", ja: "炎症性表皮嚢腫", ko: "염증성 표피낭종" }, causes.inflammation, treatmentKinds.procedure, { tags: ["皮脂腺囊腫", "表皮囊腫", "發炎", "切開", "抗生素"], zhCause: "囊腫內容物刺激或合併感染發炎", zhTreat: "治療可能包含消炎藥、抗生素、切開引流，穩定後才評估是否完整切除。" }),
+  item("inflamed_epidermal_cyst", "痤瘡與毛囊相關疾病", "皮脂腺囊腫／表皮囊腫發炎", { id: "kista epidermal yang meradang", en: "inflamed epidermal cyst", vi: "nang biểu bì bị viêm", th: "ซีสต์ผิวหนังอักเสบ", ja: "炎症性表皮嚢腫", ko: "염증성 표피낭종" }, causes.inflammation, treatmentKinds.procedure, { tags: ["皮脂腺囊腫", "表皮囊腫", "發炎", "切開", "抗生素"], care: commonCare({ id: "Jangan memencet atau menusuk sendiri karena dapat memperluas peradangan.", en: "Do not squeeze or puncture it yourself, because this can spread the inflammation.", vi: "Không tự nặn hoặc chọc vỡ vì có thể làm viêm lan rộng.", th: "อย่าบีบหรือเจาะเอง เพราะอาจทำให้อักเสบลาม", ja: "自分で押し出したり刺したりしないでください。炎症が広がることがあります。", ko: "직접 짜거나 찌르지 마세요. 염증이 퍼질 수 있습니다." }), follow: commonFollow({ id: "Setelah peradangan mereda, dokter akan menilai apakah perlu operasi pengangkatan.", en: "After the inflammation settles, the doctor will decide whether removal surgery is needed.", vi: "Sau khi viêm ổn định, bác sĩ sẽ đánh giá có cần phẫu thuật lấy trọn hay không.", th: "เมื่ออักเสบสงบแล้ว แพทย์จะประเมินว่าต้องผ่าตัดเอาออกหรือไม่", ja: "炎症が落ち着いてから、切除が必要かどうか判断します。", ko: "염증이 가라앉은 뒤 제거 수술이 필요한지 평가합니다." }), zhCause: "囊腫內容物刺激或合併感染發炎", zhTreat: "治療可能包含消炎藥、抗生素、切開引流，穩定後才評估是否完整切除。", zhCare: "急性發炎期請不要自己擠、挑破或用力按摩，否則可能讓發炎範圍擴大或造成傷口感染。", zhFollow: "等發炎消退後，醫師會再評估是否需要安排完整切除。" }),
 
-  item("rosacea", "慢性發炎性皮膚病", "酒糟／玫瑰斑", { id: "rosacea", en: "rosacea", vi: "trứng cá đỏ", th: "โรซาเซีย", ja: "酒さ", ko: "주사 피부염" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "常見慢性發炎性皮膚病", tags: ["酒糟", "玫瑰斑", "臉紅", "丘疹", "敏感"], follow: followLong, care: commonCare({ id: "Hindari pemicu seperti panas, alkohol, makanan pedas, sinar matahari, dan produk yang menyengat.", en: "Avoid triggers such as heat, alcohol, spicy food, sunlight, and stinging products.", vi: "Tránh nóng, rượu, đồ cay, nắng và sản phẩm gây châm chích.", th: "หลีกเลี่ยงความร้อน แอลกอฮอล์ อาหารเผ็ด แดด และผลิตภัณฑ์ที่แสบผิว", ja: "熱、アルコール、辛い食べ物、日光、しみる製品を避けてください。", ko: "열, 술, 매운 음식, 햇빛, 따가운 제품을 피하세요." }), zhCause: "臉部血管反應、皮膚敏感與發炎", zhCare: "請防曬，避免酒精、辛辣、悶熱、三溫暖與刺激性保養品。" }),
+  item("rosacea", "慢性發炎性皮膚病", "酒糟／玫瑰斑", { id: "rosacea", en: "rosacea", vi: "trứng cá đỏ", th: "โรซาเซีย", ja: "酒さ", ko: "주사 피부염" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "常見慢性發炎性皮膚病", tags: ["酒糟", "玫瑰斑", "臉紅", "丘疹", "敏感"], follow: followLong, care: commonCare({ id: "Gunakan tabir surya dan hindari pemicu seperti panas, alkohol, makanan pedas, sinar matahari, dan produk yang menyengat.", en: "Use sunscreen and avoid triggers such as heat, alcohol, spicy food, sunlight, and stinging products.", vi: "Dùng kem chống nắng và tránh nóng, rượu, đồ cay, nắng, sản phẩm gây châm chích.", th: "ใช้กันแดดและหลีกเลี่ยงความร้อน แอลกอฮอล์ อาหารเผ็ด แดด และผลิตภัณฑ์ที่แสบผิว", ja: "日焼け止めを使い、熱、アルコール、辛い食べ物、日光、しみる製品を避けてください。", ko: "자외선 차단제를 사용하고 열, 술, 매운 음식, 햇빛, 따가운 제품을 피하세요." }), warn: commonWarn({ id: "Bila mata merah, perih, kering, atau terasa mengganjal, beri tahu dokter.", en: "If your eyes become red, stinging, dry, or gritty, tell the doctor.", vi: "Nếu mắt đỏ, rát, khô hoặc cộm, hãy báo cho bác sĩ.", th: "ถ้าตาแดง แสบ แห้ง หรือเหมือนมีสิ่งแปลกปลอม ให้แจ้งแพทย์", ja: "目の赤み、しみる感じ、乾燥、異物感があれば医師に伝えてください。", ko: "눈이 붉거나 따갑거나 건조하거나 이물감이 있으면 의사에게 알려주세요." }), zhCause: "臉部血管反應、皮膚敏感與發炎", zhTreat: "治療可能包含外用藥、口服藥與保養調整。酒糟容易反覆，重點是控制發炎與減少誘發。", zhCare: "防曬是治療的一部分。請避免酒精、辛辣、悶熱、三溫暖與刺激性保養品。臉上的藥膏請依醫師指示，不要自行長期擦不明藥膏。", zhWarn: "如果眼睛紅、刺、乾澀或有異物感，請回診告知醫師。" }),
   item("psoriasis", "慢性發炎性皮膚病", "乾癬", { id: "psoriasis", en: "psoriasis", vi: "vảy nến", th: "สะเก็ดเงิน", ja: "乾癬", ko: "건선" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "慢性免疫相關皮膚病", tags: ["乾癬", "脫屑", "免疫", "慢性", "類固醇"], follow: followLong, zhCause: "免疫反應造成皮膚更新過快與發炎", zhTreat: "治療可能包含外用藥、照光、口服或注射藥物，依嚴重度調整。", zhWarn: "若有關節疼痛、指甲變形或皮疹快速惡化，請告知醫師。" }),
   item("atopic_dermatitis", "慢性發炎性皮膚病", "異位性皮膚炎", { id: "dermatitis atopik", en: "atopic dermatitis", vi: "viêm da cơ địa", th: "ผื่นภูมิแพ้ผิวหนัง", ja: "アトピー性皮膚炎", ko: "아토피 피부염" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "慢性反覆皮膚炎", tags: ["異位性皮膚炎", "濕疹", "癢", "保濕", "類固醇"], follow: followLong, care: careDry, zhCause: "皮膚屏障較弱、過敏體質與發炎反應", zhCare: "請規律保濕，洗澡水不要太熱，避免香精、粗糙衣物與已知誘發因子。" }),
   item("eczema", "慢性發炎性皮膚病", "濕疹", { id: "eksim", en: "eczema", vi: "chàm", th: "ผื่นผิวหนังอักเสบ", ja: "湿疹", ko: "습진" }, causes.inflammation, treatmentKinds.antiInflammatory, { tags: ["濕疹", "皮膚炎", "癢", "外用藥", "保濕"], care: careDry, zhCause: "皮膚屏障受損、刺激物、過敏或乾燥", zhTreat: "治療通常包含外用消炎藥與保濕修復。" }),
@@ -304,8 +403,8 @@ const conditionTemplates = [
   item("dyshidrotic_eczema", "慢性發炎性皮膚病", "汗皰疹", { id: "eksim dishidrotik", en: "dyshidrotic eczema", vi: "chàm tổ đỉa", th: "ผื่นตุ่มน้ำที่มือเท้า", ja: "汗疱", ko: "한포진" }, causes.inflammation, treatmentKinds.antiInflammatory, { tags: ["汗皰疹", "手", "腳", "水泡", "癢"], care: careDry, zhCause: "手腳皮膚發炎、汗水悶熱、刺激物或壓力", zhWarn: "水泡破掉後要避免感染，若明顯疼痛、流膿或紅腫擴大請提早回診。" }),
   item("contact_dermatitis", "慢性發炎性皮膚病", "接觸性皮膚炎", { id: "dermatitis kontak", en: "contact dermatitis", vi: "viêm da tiếp xúc", th: "ผื่นแพ้สัมผัส", ja: "接触皮膚炎", ko: "접촉피부염" }, causes.allergy, treatmentKinds.antiInflammatory, { tags: ["接觸性皮膚炎", "過敏", "刺激", "類固醇"], care: commonCare({ id: "Coba hentikan benda yang dicurigai, seperti krim baru, plester, logam, pewarna rambut, atau sarung tangan.", en: "Try stopping suspected triggers such as new creams, tapes, metals, hair dye, or gloves.", vi: "Ngưng thử các yếu tố nghi ngờ như kem mới, băng keo, kim loại, thuốc nhuộm tóc hoặc găng tay.", th: "ลองหยุดสิ่งที่สงสัย เช่น ครีมใหม่ เทป โลหะ ยาย้อมผม หรือถุงมือ", ja: "新しいクリーム、テープ、金属、染毛剤、手袋など疑わしい物を避けてください。", ko: "새 크림, 테이프, 금속, 염색약, 장갑 등 의심되는 물질을 피하세요." }), zhCause: "皮膚接觸刺激物或過敏原後產生發炎", zhCare: "請暫停可疑的新保養品、藥膏、貼布、金屬、染髮劑或手套。" }),
 
-  item("herpes_zoster", "病毒感染", "帶狀皰疹", { id: "herpes zoster", en: "shingles", vi: "zona thần kinh", th: "งูสวัด", ja: "帯状疱疹", ko: "대상포진" }, causes.virus, treatmentKinds.antiviral, { tags: ["帶狀皰疹", "水泡", "疼痛", "抗病毒"], contagious: true, zhCause: "水痘病毒再活化，常伴隨單側疼痛與水泡", zhTreat: "治療以抗病毒藥物與疼痛控制為主，越早治療越好。", zhCare: "請保持水泡乾淨，避免接觸孕婦、嬰兒或免疫力低下者。" }),
-  item("herpes_simplex", "病毒感染", "單純性皰疹", { id: "herpes simpleks", en: "herpes simplex", vi: "herpes simplex", th: "เริม", ja: "単純ヘルペス", ko: "단순포진" }, causes.virus, treatmentKinds.antiviral, { tags: ["單純皰疹", "唇皰疹", "水泡", "抗病毒"], contagious: true, follow: followLong, zhCause: "單純皰疹病毒感染，可能在疲累、壓力或免疫下降時復發", zhCare: "水泡或破皮時請避免親吻、共用餐具或接觸他人黏膜。" }),
+  item("herpes_zoster", "病毒感染", "帶狀皰疹", { id: "herpes zoster", en: "shingles", vi: "zona thần kinh", th: "งูสวัด", ja: "帯状疱疹", ko: "대상포진" }, causes.virus, treatmentKinds.antiviral, { tags: ["帶狀皰疹", "水泡", "疼痛", "抗病毒"], contagious: true, treat: zosterTreat, warn: zosterWarn, zhCause: "水痘病毒再活化，常伴隨單側疼痛與水泡", zhTreat: "治療以抗病毒藥物與疼痛控制為主。抗病毒藥在出疹後 72 小時內開始效果最好，可以縮短病程並降低後續疼痛風險。", zhCare: "請保持水泡乾淨，避免接觸孕婦、嬰兒或免疫力低下者。", zhWarn: "如果疹子長在眼睛周圍、額頭或鼻尖，請儘快回診或看眼科，因為可能影響眼睛。" }),
+  item("herpes_simplex", "病毒感染", "單純性皰疹", { id: "herpes simpleks", en: "herpes simplex", vi: "herpes simplex", th: "เริม", ja: "単純ヘルペス", ko: "단순포진" }, causes.virus, treatmentKinds.antiviral, { tags: ["單純皰疹", "唇皰疹", "水泡", "抗病毒"], contagious: true, follow: followLong, treat: commonTreat({ id: "obat antivirus. Bila Anda sering kambuh, mulai obat segera saat terasa kesemutan, panas, atau perih sebelum lepuh muncul", en: "antiviral medicine. If you have recurrences, start medicine as soon as you feel tingling, burning, or soreness before blisters appear", vi: "thuốc kháng vi-rút. Nếu hay tái phát, hãy bắt đầu thuốc ngay khi có cảm giác châm chích, nóng rát hoặc đau trước khi nổi bóng nước", th: "ยาต้านไวรัส หากเป็นซ้ำบ่อย ให้เริ่มยาทันทีเมื่อเริ่มรู้สึกยิบ ๆ แสบร้อน หรือเจ็บก่อนมีตุ่มน้ำ", ja: "抗ウイルス薬です。再発を繰り返す場合は、水ぶくれが出る前のピリピリ感、熱感、痛みを感じた時点で早めに薬を始めてください", ko: "항바이러스제입니다. 자주 재발한다면 물집이 생기기 전 따끔거림, 화끈거림, 통증이 느껴질 때 바로 약을 시작하세요" }), zhCause: "單純皰疹病毒感染，可能在疲累、壓力或免疫下降時復發", zhTreat: "治療以抗病毒藥為主。如果你已經有過皰疹經驗，下次在水泡出來前感覺刺癢、灼熱或刺痛時就立刻開始服藥，效果最好。", zhCare: "水泡或破皮時請避免親吻、共用餐具或接觸他人黏膜。" }),
   item("viral_warts", "病毒感染", "病毒疣", { id: "kutil karena virus", en: "viral warts", vi: "mụn cóc do vi-rút", th: "หูดจากไวรัส", ja: "ウイルス性いぼ", ko: "바이러스 사마귀" }, causes.virus, treatmentKinds.procedure, {
     tags: ["病毒疣", "疣", "冷凍", "傳染", "七天", "健保"], contagious: true, typicalFollowUp: "台灣健保下，冷凍治療通常每七天可以做一次，請依醫師安排回診。",
     customZh: {
@@ -327,12 +426,12 @@ const conditionTemplates = [
   }),
   item("molluscum_contagiosum", "病毒感染", "傳染性軟疣", { id: "molluscum contagiosum", en: "molluscum contagiosum", vi: "u mềm lây", th: "หูดข้าวสุก", ja: "伝染性軟属腫", ko: "전염성 연속종" }, causes.virus, treatmentKinds.procedure, { tags: ["傳染性軟疣", "軟疣", "病毒", "傳染"], contagious: true, care: careInfection, zhCause: "病毒感染造成小顆、中央凹陷的丘疹", zhCare: "請避免搔抓與共用毛巾，兒童或免疫力低下者可能較容易擴散。" }),
 
-  item("tinea_corporis_cruris", "黴菌與寄生蟲相關", "體癬／股癬", { id: "kurap badan atau selangkangan", en: "ringworm of the body or groin", vi: "hắc lào ở thân hoặc bẹn", th: "กลากที่ลำตัวหรือขาหนีบ", ja: "体部白癬／股部白癬", ko: "몸백선 또는 완선" }, causes.fungus, treatmentKinds.antifungal, { tags: ["體癬", "股癬", "黴菌", "抗黴菌"], contagious: true, care: careInfection, zhCause: "皮膚黴菌感染，常和潮濕、流汗或接觸感染源有關", zhCare: "請保持乾爽，衣物毛巾分開清洗，避免自行長期擦類固醇以免惡化。" }),
-  item("tinea_pedis", "黴菌與寄生蟲相關", "香港腳／足癬", { id: "kutu air", en: "athlete's foot", vi: "nấm bàn chân", th: "ฮ่องกงฟุตหรือน้ำกัดเท้า", ja: "足白癬", ko: "무좀" }, causes.fungus, treatmentKinds.antifungal, { tags: ["香港腳", "足癬", "黴菌", "腳癢"], contagious: true, care: careInfection, zhCause: "足部黴菌感染，常和鞋襪悶熱潮濕有關", zhCare: "請保持腳趾縫乾燥，襪子每天更換，鞋子輪替通風。" }),
-  item("onychomycosis", "黴菌與寄生蟲相關", "灰指甲／甲癬", { id: "jamur kuku", en: "fungal nail infection", vi: "nấm móng", th: "เชื้อราที่เล็บ", ja: "爪白癬", ko: "손발톱무좀" }, causes.fungus, treatmentKinds.antifungal, { tags: ["灰指甲", "甲癬", "黴菌", "指甲"], contagious: true, follow: followLong, zhCause: "指甲黴菌感染，治療時間通常較長", zhTreat: "治療可能包含外用或口服抗黴菌藥，口服藥需評估肝功能與交互作用。", zhFollow: "指甲長得慢，常需要數月追蹤。" }),
-  item("scabies", "黴菌與寄生蟲相關", "疥瘡", { id: "kudis skabies", en: "scabies", vi: "ghẻ", th: "หิด", ja: "疥癬", ko: "옴" }, causes.inflammation, treatmentKinds.procedure, { tags: ["疥瘡", "寄生蟲", "癢", "傳染"], contagious: true, care: commonCare({ id: "Obati kontak dekat sesuai petunjuk dokter dan cuci pakaian, seprai, serta handuk dengan benar.", en: "Close contacts may need treatment; wash clothes, bedding, and towels properly.", vi: "Người tiếp xúc gần có thể cần điều trị; giặt quần áo, ga giường và khăn đúng cách.", th: "ผู้สัมผัสใกล้ชิดอาจต้องรักษาด้วย ซักเสื้อผ้า ผ้าปู และผ้าเช็ดตัวให้เหมาะสม", ja: "濃厚接触者も治療が必要なことがあります。衣類、寝具、タオルを適切に洗ってください。", ko: "밀접 접촉자도 치료가 필요할 수 있으며 옷, 침구, 수건을 적절히 세탁하세요." }), zhCause: "疥蟲寄生造成劇癢，常在夜間更癢", zhTreat: "治療需要正確塗抹藥物，密切接觸者可能也要一起處理。" }),
+  item("tinea_corporis_cruris", "黴菌與寄生蟲相關", "體癬／股癬", { id: "kurap badan atau selangkangan", en: "ringworm of the body or groin", vi: "hắc lào ở thân hoặc bẹn", th: "กลากที่ลำตัวหรือขาหนีบ", ja: "体部白癬／股部白癬", ko: "몸백선 또는 완선" }, causes.fungus, treatmentKinds.antifungal, { tags: ["體癬", "股癬", "黴菌", "抗黴菌"], contagious: true, treat: tineaTreat, care: tineaCare, warn: tineaWarn, zhCause: "皮膚黴菌感染，常和潮濕、流汗或接觸感染源有關", zhTreat: "治療以抗黴菌藥為主。請依醫師指示完成療程，症狀好轉後通常仍需再擦一段時間，避免復發。", zhCare: "請保持乾爽，流汗後更換衣物與內褲，衣物毛巾分開清洗。不要自行混擦不明藥膏。", zhWarn: "如果範圍變大、疼痛、化膿或一直復發，請回診。" }),
+  item("tinea_pedis", "黴菌與寄生蟲相關", "香港腳／足癬", { id: "kutu air", en: "athlete's foot", vi: "nấm bàn chân", th: "ฮ่องกงฟุตหรือน้ำกัดเท้า", ja: "足白癬", ko: "무좀" }, causes.fungus, treatmentKinds.antifungal, { tags: ["香港腳", "足癬", "黴菌", "腳癢"], contagious: true, treat: tineaTreat, care: commonCare({ id: "Jaga sela jari kaki tetap kering, ganti kaus kaki setiap hari, pilih kaus kaki yang menyerap keringat, dan ganti sepatu bergiliran.", en: "Keep the spaces between toes dry, change socks daily, choose moisture-wicking socks, and rotate shoes.", vi: "Giữ kẽ chân khô, thay vớ mỗi ngày, chọn vớ thấm hút mồ hôi và thay đổi giày luân phiên.", th: "รักษาซอกนิ้วเท้าให้แห้ง เปลี่ยนถุงเท้าทุกวัน เลือกถุงเท้าที่ระบายเหงื่อ และสลับรองเท้า", ja: "足指の間を乾かし、靴下は毎日替え、汗を吸いやすい靴下を選び、靴はローテーションしてください。", ko: "발가락 사이를 건조하게 유지하고 양말은 매일 갈아 신으며 땀을 잘 흡수하는 양말을 고르고 신발은 번갈아 신으세요." }), follow: commonFollow({ id: "Pengobatan sering perlu beberapa minggu sampai beberapa bulan; ikuti jadwal kontrol dokter.", en: "Treatment often takes several weeks to months; follow the doctor's follow-up plan.", vi: "Điều trị thường cần vài tuần đến vài tháng; hãy tái khám theo lịch bác sĩ.", th: "การรักษามักใช้เวลาหลายสัปดาห์ถึงหลายเดือน ให้มาตามนัดแพทย์", ja: "治療には数週間から数か月かかることがあります。医師の指示どおり再診してください。", ko: "치료는 수주에서 수개월 걸릴 수 있으니 의사의 추적 계획을 따르세요." }), zhCause: "足部黴菌感染，常和鞋襪悶熱潮濕有關", zhCare: "請保持腳趾縫乾燥，襪子每天更換，可選吸濕排汗材質的襪子，鞋子輪替通風。", zhFollow: "香港腳治療常需要數週到數月，請依醫師安排追蹤。" }),
+  item("onychomycosis", "黴菌與寄生蟲相關", "灰指甲／甲癬", { id: "jamur kuku", en: "fungal nail infection", vi: "nấm móng", th: "เชื้อราที่เล็บ", ja: "爪白癬", ko: "손발톱무좀" }, causes.fungus, treatmentKinds.antifungal, { tags: ["灰指甲", "甲癬", "黴菌", "指甲"], contagious: true, follow: commonFollow({ id: "Kuku tumbuh lambat. Walau obat minum sering sekitar 12 minggu, tampilan kuku pulih perlahan selama berbulan-bulan.", en: "Nails grow slowly. Even when oral treatment is about 12 weeks, the nail appearance improves gradually over months.", vi: "Móng mọc chậm. Dù thuốc uống thường khoảng 12 tuần, hình dạng móng cải thiện dần trong nhiều tháng.", th: "เล็บงอกช้า แม้ยากินมักใช้ประมาณ 12 สัปดาห์ แต่ลักษณะเล็บจะค่อย ๆ ดีขึ้นเป็นเดือน ๆ", ja: "爪は伸びるのが遅いです。内服治療は約12週間でも、見た目の改善には数か月かかります。", ko: "손발톱은 천천히 자랍니다. 먹는 약은 보통 약 12주라도 모양이 좋아지는 데는 여러 달이 걸립니다." }), zhCause: "指甲黴菌感染，治療時間通常較長", zhTreat: "治療可能包含外用或口服抗黴菌藥。若使用口服藥，腳趾甲通常約 12 週，期間可能需要抽血追蹤肝功能；若不使用口服藥，外用藥常需要擦 6 個月以上。", zhFollow: "指甲長得慢，外觀完全長好常需 9 到 12 個月。若同時有香港腳，也需要一起治療，避免反覆感染。" }),
+  item("scabies", "黴菌與寄生蟲相關", "疥瘡", { id: "kudis skabies", en: "scabies", vi: "ghẻ", th: "หิด", ja: "疥癬", ko: "옴" }, causes.inflammation, treatmentKinds.procedure, { tags: ["疥瘡", "寄生蟲", "癢", "傳染"], contagious: true, treat: scabiesTreat, care: scabiesCare, warn: scabiesWarn, follow: commonFollow({ id: "Sering perlu pengulangan pada hari ke-7 sesuai arahan dokter.", en: "A repeat treatment around day 7 is often needed as directed by the doctor.", vi: "Thường cần lặp lại điều trị vào khoảng ngày thứ 7 theo hướng dẫn bác sĩ.", th: "มักต้องรักษาซ้ำประมาณวันที่ 7 ตามคำแนะนำแพทย์", ja: "医師の指示により、7日目ごろに再治療が必要なことがあります。", ko: "의사의 지시에 따라 7일째쯤 반복 치료가 필요할 수 있습니다." }), zhCause: "疥蟲寄生造成劇癢，常在夜間更癢", zhTreat: "治療需要正確塗抹藥物。藥膏通常要擦在醫師指定範圍，包含手指縫、腳趾縫、腋下、肚臍與生殖器周圍，停留 8 到 12 小時後再洗掉。", zhCare: "全家人或同住者可能需要同時治療。衣物、床單、毛巾請用熱水清洗並烘乾；無法清洗的物品可密封至少 72 小時。", zhWarn: "治療後搔癢可能還會持續 2 到 4 週。若又出現很多新疹子或化膿，請回診。", zhFollow: "通常需要在第 7 天依醫師指示再治療一次。" }),
 
-  item("acute_urticaria", "過敏與蕁麻疹", "急性蕁麻疹", { id: "urtikaria akut", en: "acute urticaria", vi: "mề đay cấp", th: "ลมพิษเฉียบพลัน", ja: "急性じんましん", ko: "급성 두드러기" }, causes.allergy, treatmentKinds.antihistamine, { tags: ["急性蕁麻疹", "過敏", "癢", "抗組織胺"], zhCause: "過敏、感染、食物、藥物或不明原因引起的皮膚反應", zhWarn: "若合併嘴唇舌頭腫、喘、胸悶、頭暈或全身不適，請立即就醫。" }),
+  item("acute_urticaria", "過敏與蕁麻疹", "急性蕁麻疹", { id: "urtikaria akut", en: "acute urticaria", vi: "mề đay cấp", th: "ลมพิษเฉียบพลัน", ja: "急性じんましん", ko: "급성 두드러기" }, causes.allergy, treatmentKinds.antihistamine, { tags: ["急性蕁麻疹", "過敏", "癢", "抗組織胺"], warn: commonWarn({ id: "Segera cari pertolongan bila bibir atau lidah bengkak, sesak napas, dada terasa berat, pusing, atau sangat lemas.", en: "Seek urgent care if the lips or tongue swell, breathing is difficult, the chest feels tight, you feel dizzy, or you feel very weak.", vi: "Đi cấp cứu nếu môi hoặc lưỡi sưng, khó thở, tức ngực, chóng mặt hoặc rất mệt.", th: "ให้รีบพบแพทย์ทันทีถ้าปากหรือลิ้นบวม หายใจลำบาก แน่นหน้าอก เวียนศีรษะ หรืออ่อนเพลียมาก", ja: "唇や舌の腫れ、息苦しさ、胸の圧迫感、めまい、強いだるさがあればすぐ受診してください。", ko: "입술이나 혀가 붓거나 숨쉬기 어렵거나 가슴이 답답하거나 어지럽거나 매우 힘이 없으면 즉시 진료를 받으세요." }), zhCause: "過敏、感染、食物、藥物或不明原因引起的皮膚反應", zhTreat: "治療通常以抗組織胺止癢、消腫為主。請依醫師指示服藥，不要自行混用多種過敏藥。", zhWarn: "若合併嘴唇或舌頭腫、呼吸困難、胸悶、頭暈或全身很不舒服，請立即就醫。" }),
   item("chronic_urticaria", "過敏與蕁麻疹", "慢性蕁麻疹", { id: "urtikaria kronis", en: "chronic urticaria", vi: "mề đay mạn tính", th: "ลมพิษเรื้อรัง", ja: "慢性じんましん", ko: "만성 두드러기" }, causes.allergy, treatmentKinds.antihistamine, { tags: ["慢性蕁麻疹", "過敏", "抗組織胺", "復發"], follow: followLong, zhCause: "皮膚肥大細胞容易被刺激而反覆起疹，很多時候找不到單一原因", zhTreat: "治療以規律使用抗組織胺與調整誘發因子為主。" }),
   item("drug_allergy_warning", "過敏與蕁麻疹", "藥物過敏警告", { id: "peringatan alergi obat", en: "drug allergy warning", vi: "cảnh báo dị ứng thuốc", th: "คำเตือนแพ้ยา", ja: "薬剤アレルギーの注意", ko: "약물 알레르기 주의" }, causes.allergy, treatmentKinds.antihistamine, { tags: ["藥物過敏", "過敏", "警訊", "立即就醫"], severity: "重要安全提醒", zhCause: "藥物可能引起皮膚疹或全身性過敏反應", zhTreat: "若懷疑藥物過敏，請停止可疑藥物並儘快聯絡醫師，嚴重症狀需立即就醫。", zhWarn: "若出現嘴唇舌頭腫、喘、發燒、眼口生殖器破皮、大片水泡或皮膚疼痛，請立即就醫。" }),
   item("insect_bite_reaction", "過敏與蕁麻疹", "昆蟲叮咬反應", { id: "reaksi gigitan serangga", en: "insect bite reaction", vi: "phản ứng do côn trùng cắn", th: "ปฏิกิริยาจากแมลงกัดต่อย", ja: "虫刺され反応", ko: "벌레 물림 반응" }, causes.allergy, treatmentKinds.antiInflammatory, { tags: ["昆蟲叮咬", "紅腫", "癢", "過敏"], zhCause: "昆蟲叮咬後的局部發炎或過敏反應", zhCare: "請避免抓破，可冰敷，戶外活動時注意防蚊蟲。" }),
@@ -349,10 +448,10 @@ const conditionTemplates = [
 
   item("topical_steroid_instruction", "一般治療說明", "外用類固醇使用說明", { id: "petunjuk penggunaan steroid oles", en: "topical steroid instructions", vi: "hướng dẫn dùng corticosteroid bôi", th: "คำแนะนำการใช้ยาสเตียรอยด์ทา", ja: "外用ステロイドの使い方", ko: "바르는 스테로이드 사용법" }, causes.procedure, treatmentKinds.antiInflammatory, { tags: ["外用類固醇", "藥膏", "濕疹", "乾癬"], zhCause: "外用類固醇是用來降低皮膚發炎、紅腫與搔癢的藥物", zhTreat: "請薄薄擦在發炎部位，依醫師指示的次數與天數使用，不要自行長期擦臉、皺摺或私密處。", zhWarn: "若越擦越痛、化膿、黴菌惡化或皮膚變薄，請回診調整。" }),
   item("topical_antibiotic_instruction", "一般治療說明", "外用抗生素使用說明", { id: "petunjuk penggunaan antibiotik oles", en: "topical antibiotic instructions", vi: "hướng dẫn dùng kháng sinh bôi", th: "คำแนะนำการใช้ยาปฏิชีวนะทา", ja: "外用抗菌薬の使い方", ko: "바르는 항생제 사용법" }, causes.procedure, treatmentKinds.antibiotic, { tags: ["外用抗生素", "抗生素", "感染", "膿皰"], zhCause: "外用抗生素是用來處理局部細菌感染的藥物", zhTreat: "請薄薄擦在感染或醫師指定部位，不要拿來長期保養或擦不相關的皮疹。" }),
-  item("topical_antifungal_instruction", "一般治療說明", "外用抗黴菌藥使用說明", { id: "petunjuk penggunaan antijamur oles", en: "topical antifungal instructions", vi: "hướng dẫn dùng thuốc kháng nấm bôi", th: "คำแนะนำการใช้ยาต้านเชื้อราทา", ja: "外用抗真菌薬の使い方", ko: "바르는 항진균제 사용법" }, causes.procedure, treatmentKinds.antifungal, { tags: ["外用抗黴菌", "黴菌", "香港腳", "股癬"], zhCause: "外用抗黴菌藥是用來治療皮膚黴菌感染", zhTreat: "請依醫師指示規律擦藥，症狀改善後通常仍需再擦一段時間，降低復發。" }),
-  item("oral_antibiotic_instruction", "一般治療說明", "口服抗生素使用說明", { id: "petunjuk antibiotik minum", en: "oral antibiotic instructions", vi: "hướng dẫn dùng kháng sinh uống", th: "คำแนะนำการกินยาปฏิชีวนะ", ja: "内服抗菌薬の使い方", ko: "먹는 항생제 복용법" }, causes.procedure, treatmentKinds.antibiotic, { tags: ["口服抗生素", "抗生素", "感染", "毛囊炎"], zhCause: "口服抗生素用來治療較明顯或範圍較大的細菌感染", zhTreat: "請依照處方時間服用，不要自行停藥或把剩藥留給下次使用。", zhWarn: "若出現嚴重腹瀉、皮疹、呼吸不適或疑似過敏，請提早就醫。" }),
+  item("topical_antifungal_instruction", "一般治療說明", "外用抗黴菌藥使用說明", { id: "petunjuk penggunaan antijamur oles", en: "topical antifungal instructions", vi: "hướng dẫn dùng thuốc kháng nấm bôi", th: "คำแนะนำการใช้ยาต้านเชื้อราทา", ja: "外用抗真菌薬の使い方", ko: "바르는 항진균제 사용법" }, causes.procedure, treatmentKinds.antifungal, { tags: ["外用抗黴菌", "黴菌", "香港腳", "股癬"], treat: tineaTreat, zhCause: "外用抗黴菌藥是用來治療皮膚黴菌感染", zhTreat: "請依醫師指示規律擦藥，症狀改善後通常仍需再擦 1 到 2 週，降低復發。" }),
+  item("oral_antibiotic_instruction", "一般治療說明", "口服抗生素使用說明", { id: "petunjuk antibiotik minum", en: "oral antibiotic instructions", vi: "hướng dẫn dùng kháng sinh uống", th: "คำแนะนำการกินยาปฏิชีวนะ", ja: "内服抗菌薬の使い方", ko: "먹는 항생제 복용법" }, causes.procedure, treatmentKinds.antibiotic, { tags: ["口服抗生素", "抗生素", "感染", "毛囊炎"], treat: antibioticCourseTreat, warn: antibioticCourseWarn, zhCause: "口服抗生素用來治療較明顯或範圍較大的細菌感染", zhTreat: "請依照處方時間服用，完整吃完整個療程；即使症狀改善，也不要自行停藥。", zhWarn: "提早停藥可能讓感染反覆或下次更難治。剩餘的藥不要留給下次用，也不要分給家人。" }),
   item("oral_antiviral_instruction", "一般治療說明", "口服抗病毒藥使用說明", { id: "petunjuk antivirus minum", en: "oral antiviral instructions", vi: "hướng dẫn dùng thuốc kháng vi-rút uống", th: "คำแนะนำการกินยาต้านไวรัส", ja: "内服抗ウイルス薬の使い方", ko: "먹는 항바이러스제 복용법" }, causes.procedure, treatmentKinds.antiviral, { tags: ["口服抗病毒", "抗病毒", "皰疹", "帶狀皰疹"], zhCause: "口服抗病毒藥用於皰疹類病毒感染，越早規律服用效果越好", zhTreat: "請依照處方時間完整服用，若腎功能不好或正在使用其他藥物請告知醫師。" }),
   item("cryotherapy_aftercare", "一般治療說明", "冷凍治療後照護", { id: "perawatan setelah terapi beku", en: "cryotherapy aftercare", vi: "chăm sóc sau áp lạnh", th: "การดูแลหลังจี้เย็น", ja: "冷凍療法後のケア", ko: "냉동치료 후 관리" }, causes.procedure, treatmentKinds.procedure, { tags: ["冷凍", "水泡", "結痂", "疣"], zhCause: "冷凍治療會讓病灶局部結冰，之後可能發炎、起水泡或結痂", zhTreat: "治療後請保持清潔乾燥，不要自行撕皮。若水泡很大或疼痛明顯，可回診處理。", zhWarn: "若紅腫熱痛擴大、流膿或發燒，請提早就醫。" }),
   item("wound_care_dressing", "一般治療說明", "傷口照護與換藥說明", { id: "perawatan luka dan ganti balutan", en: "wound care and dressing instructions", vi: "chăm sóc vết thương và thay băng", th: "การดูแลแผลและเปลี่ยนผ้าปิดแผล", ja: "創傷ケアと包帯交換", ko: "상처 관리와 드레싱" }, causes.procedure, treatmentKinds.procedure, { tags: ["傷口", "換藥", "感染", "紗布"], zhCause: "傷口需要保持清潔並依照醫師指示換藥", zhTreat: "請用醫師指定方式清潔與換藥，保持敷料乾淨，避免泡水或自行塗不明藥膏。", zhWarn: "若紅腫熱痛加劇、流膿、惡臭、發燒或傷口裂開，請提早回診。" }),
-  item("urgent_skin_warning", "一般治療說明", "需要立即就醫的皮膚警訊", { id: "tanda bahaya kulit yang perlu segera diperiksa", en: "skin warning signs that need urgent care", vi: "dấu hiệu da cần đi khám ngay", th: "สัญญาณผิวหนังที่ควรพบแพทย์ทันที", ja: "すぐ受診が必要な皮膚の警告症状", ko: "즉시 진료가 필요한 피부 경고 신호" }, causes.procedure, treatmentKinds.observe, { tags: ["立即就醫", "警訊", "過敏", "感染", "水泡"], severity: "重要安全提醒", zhCause: "有些皮膚症狀可能代表嚴重感染、嚴重藥物過敏或全身性問題", zhTreat: "若出現警訊，不要只等門診追蹤，請盡快急診或立即就醫。", zhWarn: "警訊包括高燒、快速擴大的紅腫熱痛、大片水泡或皮膚疼痛、眼口生殖器破皮、呼吸困難、嘴唇舌頭腫、意識不清或全身狀況變差。", zhFollow: "急性危險狀況處理後，再依醫師建議安排皮膚科追蹤。" })
+  item("urgent_skin_warning", "一般治療說明", "需要立即就醫的皮膚警訊", { id: "tanda bahaya kulit yang perlu segera diperiksa", en: "skin warning signs that need urgent care", vi: "dấu hiệu da cần đi khám ngay", th: "สัญญาณผิวหนังที่ควรพบแพทย์ทันที", ja: "すぐ受診が必要な皮膚の警告症状", ko: "즉시 진료가 필요한 피부 경고 신호" }, causes.procedure, treatmentKinds.observe, { tags: ["立即就醫", "警訊", "過敏", "感染", "水泡"], severity: "重要安全提醒", zhCause: "有些皮膚症狀可能代表嚴重感染、嚴重藥物過敏或全身性問題", zhTreat: "若出現警訊，不要只等門診追蹤，請盡快急診或立即就醫。", zhWarn: "出現以下任何一種狀況，請立刻就醫：嘴唇或舌頭腫、呼吸困難；高燒合併皮疹快速擴大；嘴巴、眼睛或生殖器破皮；大片水泡或皮膚像燙傷一樣脫皮；紅腫熱痛快速擴大；意識變差或全身狀況明顯惡化。", zhFollow: "急性危險狀況處理後，再依醫師建議安排皮膚科追蹤。" })
 ];
