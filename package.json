@@ -1,0 +1,14 @@
+{
+  "name": "derm-explain-tool",
+  "private": true,
+  "description": "皮膚科多語病情說明與朗讀工具的維護工具集。",
+  "scripts": {
+    "validate": "node tools/validate.js",
+    "list": "node tools/list.js",
+    "audit": "node tools/audit.js",
+    "dump": "node tools/dump-disease.js",
+    "bump-sw": "node tools/bump-sw.js",
+    "add-language": "node tools/add-language.js",
+    "serve": "bash tools/serve.sh"
+  }
+}
