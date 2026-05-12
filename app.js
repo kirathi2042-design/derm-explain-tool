@@ -126,6 +126,7 @@ function cacheElements() {
   els.togglePromptButton = document.querySelector("#togglePromptButton");
   els.clearButton = document.querySelector("#clearButton");
   els.toast = document.querySelector("#toast");
+  els.forceUpdateButton = document.querySelector("#forceUpdateButton");
 }
 
 function bindEvents() {
@@ -142,6 +143,9 @@ function bindEvents() {
     state.showReadPrompt = !state.showReadPrompt;
     updateOutput();
   });
+  if (els.forceUpdateButton) {
+    els.forceUpdateButton.addEventListener("click", forceUpdate);
+  }
 }
 
 function renderLanguageSelector() {
@@ -439,4 +443,31 @@ function registerServiceWorker() {
       });
     });
   }
+}
+
+async function forceUpdate() {
+  if (!window.confirm("確定要清除快取並重新載入最新版本嗎？")) return;
+
+  if (els.forceUpdateButton) {
+    els.forceUpdateButton.classList.add("is-loading");
+    els.forceUpdateButton.disabled = true;
+  }
+  showToast("清除快取中…");
+
+  try {
+    if ("serviceWorker" in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map((reg) => reg.unregister()));
+    }
+    if ("caches" in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
+    }
+  } catch (error) {
+    console.warn("Force update cleanup failed:", error);
+  }
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("_t", Date.now().toString());
+  window.location.replace(url.toString());
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = "derm-explain-tool-v4";
+const CACHE_NAME = "derm-explain-tool-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
