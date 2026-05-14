@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>掃 QR</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="page">
+  <a href="./index.html" class="back">← 回主選單</a>
+  <h2 style="margin:0 0 12px;">掃 QR</h2>
+  <p class="muted small">掃到內容後可加一句問題，會自動以你的身分送進聊天，Claude 在聊天框回覆。</p>
+
+  <div class="row">
+    <button id="scan" class="btn">🔳 開啟掃碼</button>
+  </div>
+
+  <textarea id="value" placeholder="掃到的內容會放在這裡，也能直接貼網址。"></textarea>
+
+  <textarea id="ask" placeholder="想對這個內容做什麼？（例：摘要、翻譯、判斷可信度）留白 = 自動處理" style="margin-top:12px;"></textarea>
+
+  <div class="row" style="margin-top:8px;">
+    <button id="go" class="btn" disabled>送進聊天框</button>
+  </div>
+
+  <div class="log" id="log">點上方按鈕開啟原生 QR scanner 📷</div>
+</main>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="./liff-client.js"></script>
+<script>
+(async () => {
+  await LC.ready();
+  const scan = document.getElementById('scan');
+  const value = document.getElementById('value');
+  const ask = document.getElementById('ask');
+  const go = document.getElementById('go');
+  const log = document.getElementById('log');
+
+  const refresh = () => { go.disabled = value.value.trim().length === 0; };
+  value.addEventListener('input', refresh);
+
+  scan.addEventListener('click', async () => {
+    if (!liff.scanCodeV2) { LC.setStatus(log, '此 LIFF 版本不支援 scanCodeV2，請手動貼上。'); return; }
+    try {
+      const r = await liff.scanCodeV2();
+      value.value = r.value ?? '';
+      refresh();
+      LC.setStatus(log, '掃到了。可加上問題後送出。');
+    } catch (e) {
+      LC.setStatus(log, '取消或失敗：' + e.message);
+    }
+  });
+
+  go.addEventListener('click', async () => {
+    go.disabled = true;
+    const prompt = (ask.value.trim() || '對下面這段內容做適當的處理（網址→摘要；文字→翻譯或解釋；資料→解讀）：') +
+                   '\n\n' + value.value;
+    if (!liff.isInClient()) {
+      LC.setStatus(log, '請在 LINE app 內開啟此頁才能送進聊天。');
+      go.disabled = false;
+      return;
+    }
+    try {
+      await liff.sendMessages([{ type: 'text', text: prompt }]);
+      LC.setStatus(log, '已送出，回聊天看 Claude 回覆 👋');
+      setTimeout(() => liff.closeWindow(), 1200);
+    } catch (e) {
+      LC.setStatus(log, '送出失敗：' + e.message);
+      go.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

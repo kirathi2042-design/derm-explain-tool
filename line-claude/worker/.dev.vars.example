@@ -1,0 +1,14 @@
+# Copy to .dev.vars and fill in. .dev.vars is gitignored.
+# Get values from:
+#   LINE Developers Console > Messaging API channel
+#   LINE Developers Console > LINE Login channel (for LIFF)
+#   console.anthropic.com > Settings > API keys
+#   notion.so > Integrations (P4 only)
+
+LINE_CHANNEL_ACCESS_TOKEN=
+LINE_CHANNEL_SECRET=
+LINE_LOGIN_CHANNEL_ID=
+ANTHROPIC_API_KEY=
+OWNER_USER_ID=
+NOTION_TOKEN=
+NOTION_DATABASE_ID=

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LINE × Claude</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="grid">
+  <header class="hello">
+    <div class="avatar"><img id="avatar" alt=""></div>
+    <div>
+      <div class="muted">嗨</div>
+      <div class="name" id="name">…</div>
+    </div>
+  </header>
+
+  <a class="tile cam" href="./camera.html"><div>📷</div><div>拍照問 Claude</div></a>
+  <a class="tile voice" href="./voice.html"><div>🎙</div><div>語音待辦</div></a>
+  <a class="tile qr" href="./qr.html"><div>🔳</div><div>掃 QR</div></a>
+  <a class="tile share" href="./share.html"><div>📤</div><div>分享到群組</div></a>
+
+  <footer class="muted small" id="status">準備中…</footer>
+</main>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="./liff-client.js"></script>
+<script>
+(async () => {
+  try {
+    const cfg = await fetch('./config.json').then(r => r.json());
+    await liff.init({ liffId: cfg.liffId });
+    if (!liff.isLoggedIn()) { liff.login(); return; }
+    const p = await liff.getProfile();
+    document.getElementById('name').textContent = p.displayName;
+    document.getElementById('avatar').src = p.pictureUrl || '';
+    document.getElementById('status').textContent = `在 ${liff.getOS()} 的 LINE 內`;
+  } catch (e) {
+    document.getElementById('status').textContent = '初始化失敗：' + e.message;
+  }
+})();
+</script>
+</body>
+</html>
