@@ -404,6 +404,260 @@ const scabiesWarn = commonWarn({
   ru: "Зуд может сохраняться 2-4 недели после лечения. Если появляется много новых высыпаний или гной, вернитесь на приём."
 });
 
+const acneExplain = commonExplain({
+  id: "jerawat",
+  en: "acne",
+  vi: "mụn trứng cá",
+  th: "สิว",
+  ja: "にきび",
+  ko: "여드름",
+  uk: "вугри",
+  ru: "акне (угри)"
+}, {
+  id: "pori tersumbat, minyak kulit, bakteri kulit, dan peradangan; ini bukan karena wajah kotor",
+  en: "blocked pores, skin oil, normal skin bacteria, and inflammation; it is not simply caused by a dirty face",
+  vi: "tắc lỗ chân lông, dầu da, vi khuẩn thường trú trên da và viêm; không phải chỉ do mặt bẩn",
+  th: "รูขุมขนอุดตัน ความมัน แบคทีเรียตามผิวหนัง และการอักเสบ ไม่ได้เกิดจากหน้าสกปรกอย่างเดียว",
+  ja: "毛穴の詰まり、皮脂、皮膚にもともといる細菌、炎症で起こります。単に顔が汚いからではありません",
+  ko: "모공 막힘, 피지, 정상 피부 세균, 염증과 관련됩니다. 단순히 얼굴이 더러워서 생기는 것은 아닙니다",
+  uk: "закупорка пор, шкірне сало, звичайні бактерії шкіри та запалення; це не просто через брудне обличчя",
+  ru: "закупорка пор, кожное сало, обычные бактерии кожи и воспаление; это не просто из-за грязного лица"
+});
+
+const acneTreat = commonTreat({
+  id: "obat oles dan kadang obat minum. Perbaikan jelas biasanya perlu 6 sampai 12 minggu; pada awalnya kulit bisa kering atau sedikit perih",
+  en: "topical medicine and sometimes oral medicine. Clear improvement usually takes 6 to 12 weeks; early dryness or mild stinging can happen",
+  vi: "thuốc bôi và đôi khi thuốc uống. Cải thiện rõ thường cần 6 đến 12 tuần; ban đầu da có thể khô hoặc hơi châm chích",
+  th: "ยาทาและบางครั้งมียากิน โดยทั่วไปต้องใช้เวลา 6 ถึง 12 สัปดาห์จึงเห็นผลชัด ช่วงแรกอาจแห้งหรือตึงแสบเล็กน้อย",
+  ja: "外用薬、必要に応じて内服薬です。はっきりした改善には通常6から12週間かかり、初期に乾燥や軽い刺激感が出ることがあります",
+  ko: "바르는 약과 필요 시 먹는 약입니다. 뚜렷한 호전은 보통 6-12주 걸리며 초기에 건조함이나 약한 따가움이 있을 수 있습니다",
+  uk: "зовнішні засоби, а іноді пероральні ліки. Помітне покращення зазвичай потребує 6-12 тижнів; спочатку може бути сухість або легке печіння",
+  ru: "наружные средства, а иногда пероральные лекарства. Заметное улучшение обычно требует 6-12 недель; сначала может быть сухость или лёгкое жжение"
+});
+
+const acneCare = commonCare({
+  id: "Cuci wajah dengan lembut, gunakan pelembap dan tabir surya yang tidak mudah menyumbat pori, dan jangan memencet jerawat.",
+  en: "Cleanse gently, use non-comedogenic moisturizer and sunscreen, and do not squeeze pimples.",
+  vi: "Rửa mặt nhẹ nhàng, dùng dưỡng ẩm và chống nắng không gây bít tắc lỗ chân lông, không nặn mụn.",
+  th: "ล้างหน้าอย่างอ่อนโยน ใช้มอยส์เจอไรเซอร์และกันแดดที่ไม่อุดตันรูขุมขน และอย่าบีบสิว",
+  ja: "やさしく洗顔し、毛穴を詰まらせにくい保湿剤と日焼け止めを使い、にきびをつぶさないでください。",
+  ko: "부드럽게 세안하고 모공을 막기 어려운 보습제와 자외선 차단제를 사용하며 여드름을 짜지 마세요.",
+  uk: "Очищуйте шкіру м'яко, використовуйте зволожувач і сонцезахисний засіб, що не забивають пори, і не видавлюйте прищі.",
+  ru: "Очищайте кожу мягко, используйте увлажнитель и солнцезащитное средство, которые не забивают поры, и не выдавливайте прыщи."
+});
+
+const acneWarn = commonWarn({
+  id: "Kontrol lebih awal bila iritasi sangat berat, bengkak nyeri, bernanah banyak, atau muncul tanda alergi obat.",
+  en: "Come back earlier if irritation is severe, swelling is painful, there is a lot of pus, or signs of drug allergy appear.",
+  vi: "Tái khám sớm nếu kích ứng rất nặng, sưng đau, nhiều mủ hoặc có dấu hiệu dị ứng thuốc.",
+  th: "กลับมาตรวจก่อนนัดถ้าระคายเคืองมาก บวมเจ็บ มีหนองมาก หรือมีอาการแพ้ยา",
+  ja: "刺激が非常に強い、腫れて痛い、膿が多い、薬のアレルギー症状がある場合は早めに受診してください。",
+  ko: "자극이 매우 심하거나 붓고 아프거나 고름이 많거나 약물 알레르기 증상이 있으면 더 일찍 내원하세요.",
+  uk: "Зверніться раніше, якщо подразнення дуже сильне, набряк болючий, багато гною або з'явилися ознаки алергії на ліки.",
+  ru: "Обратитесь раньше, если раздражение очень сильное, отёк болезненный, много гноя или появились признаки аллергии на лекарства."
+});
+
+const acneFollow = commonFollow({
+  id: "Kontrol teratur agar obat dapat disesuaikan; jangan menilai hasil hanya dari beberapa hari pertama.",
+  en: "Return regularly so the medicine can be adjusted; do not judge the result only from the first few days.",
+  vi: "Tái khám đều để điều chỉnh thuốc; đừng đánh giá kết quả chỉ sau vài ngày đầu.",
+  th: "มาตรวจตามนัดเพื่อปรับยา อย่าตัดสินผลจากไม่กี่วันแรก",
+  ja: "薬を調整するため定期的に再診してください。最初の数日だけで効果を判断しないでください。",
+  ko: "약 조절을 위해 정기적으로 내원하세요. 처음 며칠만 보고 효과를 판단하지 마세요.",
+  uk: "Приходьте регулярно, щоб можна було коригувати ліки; не оцінюйте результат лише за першими кількома днями.",
+  ru: "Приходите регулярно, чтобы можно было корректировать лекарства; не оценивайте результат только по первым нескольким дням."
+});
+
+const folliculitisExplain = commonExplain({
+  id: "folikulitis",
+  en: "folliculitis",
+  vi: "viêm nang lông",
+  th: "รูขุมขนอักเสบ",
+  ja: "毛嚢炎",
+  ko: "모낭염",
+  uk: "фолікуліт",
+  ru: "фолликулит"
+}, {
+  id: "peradangan pada akar rambut, sering dipicu keringat, gesekan, mencukur, atau bakteri kulit",
+  en: "inflammation around hair roots, often triggered by sweat, friction, shaving, or skin bacteria",
+  vi: "viêm quanh chân lông, thường do mồ hôi, ma sát, cạo lông hoặc vi khuẩn trên da kích thích",
+  th: "การอักเสบรอบรากขน มักถูกกระตุ้นจากเหงื่อ การเสียดสี การโกน หรือแบคทีเรียบนผิว",
+  ja: "毛穴の周りの炎症で、汗、摩擦、剃毛、皮膚の細菌などがきっかけになることがあります",
+  ko: "털 뿌리 주변의 염증으로 땀, 마찰, 면도, 피부 세균 등이 유발할 수 있습니다",
+  uk: "запалення навколо коренів волосся, яке часто провокують піт, тертя, гоління або бактерії шкіри",
+  ru: "воспаление вокруг корней волос, которое часто провоцируют пот, трение, бритьё или бактерии кожи"
+});
+
+const folliculitisTreat = commonTreat({
+  id: "obat oles, pembersih antiseptik, atau antibiotik bila diperlukan sesuai tingkat keparahan",
+  en: "topical medicine, antiseptic wash, or antibiotics if needed depending on severity",
+  vi: "thuốc bôi, dung dịch rửa sát khuẩn hoặc kháng sinh khi cần tùy mức độ",
+  th: "ยาทา น้ำยาทำความสะอาดฆ่าเชื้อ หรือยาปฏิชีวนะเมื่อจำเป็นตามความรุนแรง",
+  ja: "重症度に応じて外用薬、抗菌洗浄剤、必要時に抗菌薬を使います",
+  ko: "중증도에 따라 바르는 약, 항균 세정제, 필요 시 항생제를 사용합니다",
+  uk: "зовнішні ліки, антисептичне очищення або антибіотики за потреби залежно від тяжкості",
+  ru: "наружные лекарства, антисептическое очищение или антибиотики при необходимости в зависимости от тяжести"
+});
+
+const folliculitisCare = commonCare({
+  id: "Jaga area tetap kering, kurangi gesekan, hindari mencukur sementara, dan jangan memencet bintil bernanah.",
+  en: "Keep the area dry, reduce friction, avoid shaving for now, and do not squeeze pustules.",
+  vi: "Giữ vùng da khô, giảm ma sát, tạm tránh cạo lông và không nặn mụn mủ.",
+  th: "รักษาบริเวณนั้นให้แห้ง ลดการเสียดสี งดโกนชั่วคราว และอย่าบีบตุ่มหนอง",
+  ja: "患部を乾かし、摩擦を減らし、しばらく剃毛を避け、膿疱をつぶさないでください。",
+  ko: "부위를 건조하게 유지하고 마찰을 줄이며 당분간 면도를 피하고 고름 잡힌 병변을 짜지 마세요.",
+  uk: "Тримайте ділянку сухою, зменшіть тертя, тимчасово уникайте гоління і не видавлюйте гнійнички.",
+  ru: "Держите участок сухим, уменьшите трение, временно избегайте бритья и не выдавливайте гнойнички."
+});
+
+const pustuleExplain = commonExplain({
+  id: "bintil bernanah karena bakteri",
+  en: "bacterial pustules",
+  vi: "mụn mủ do vi khuẩn",
+  th: "ตุ่มหนองจากแบคทีเรีย",
+  ja: "細菌性膿疱",
+  ko: "세균성 농포",
+  uk: "бактеріальні пустули",
+  ru: "бактериальные пустулы"
+}, {
+  id: "infeksi bakteri dangkal pada kulit yang dapat menyebabkan merah, nyeri, dan nanah",
+  en: "a shallow bacterial skin infection that can cause redness, pain, and pus",
+  vi: "nhiễm khuẩn nông ở da, có thể gây đỏ, đau và mủ",
+  th: "การติดเชื้อแบคทีเรียตื้น ๆ ที่ผิวหนัง ทำให้แดง เจ็บ และมีหนองได้",
+  ja: "皮膚の浅い細菌感染で、赤み、痛み、膿が出ることがあります",
+  ko: "피부 표면의 세균 감염으로 붉음, 통증, 고름이 생길 수 있습니다",
+  uk: "поверхнева бактеріальна інфекція шкіри, що може спричиняти почервоніння, біль і гній",
+  ru: "поверхностная бактериальная инфекция кожи, которая может вызывать покраснение, боль и гной"
+});
+
+const pustuleCare = commonCare({
+  id: "Jangan memencet atau mengorek nanah. Cuci tangan setelah menyentuh area tersebut dan jangan berbagi handuk.",
+  en: "Do not squeeze or pick at the pus. Wash your hands after touching the area and do not share towels.",
+  vi: "Không nặn hoặc cạy mủ. Rửa tay sau khi chạm vào vùng da đó và không dùng chung khăn.",
+  th: "อย่าบีบหรือแกะหนอง ล้างมือหลังสัมผัสบริเวณนั้น และอย่าใช้ผ้าเช็ดตัวร่วมกัน",
+  ja: "膿を押し出したり掻いたりしないでください。患部を触った後は手を洗い、タオルを共有しないでください。",
+  ko: "고름을 짜거나 뜯지 마세요. 그 부위를 만진 뒤에는 손을 씻고 수건을 함께 쓰지 마세요.",
+  uk: "Не видавлюйте і не роздряпуйте гній. Мийте руки після дотику до ділянки і не діліться рушниками.",
+  ru: "Не выдавливайте и не расцарапывайте гной. Мойте руки после прикосновения к участку и не делитесь полотенцами."
+});
+
+const pustuleWarn = commonWarn({
+  id: "Kontrol lebih awal bila kemerahan cepat meluas, nyeri makin berat, demam, atau nanah bertambah banyak.",
+  en: "Come back earlier if redness spreads quickly, pain worsens, fever occurs, or pus increases.",
+  vi: "Tái khám sớm nếu đỏ lan nhanh, đau tăng, sốt hoặc mủ nhiều hơn.",
+  th: "กลับมาตรวจก่อนนัดถ้าแดงลามเร็ว ปวดมากขึ้น มีไข้ หรือหนองมากขึ้น",
+  ja: "赤みが急に広がる、痛みが強くなる、発熱する、膿が増える場合は早めに受診してください。",
+  ko: "붉은 부위가 빠르게 퍼지거나 통증이 심해지거나 열이 나거나 고름이 늘면 더 일찍 내원하세요.",
+  uk: "Зверніться раніше, якщо почервоніння швидко поширюється, біль посилюється, з'являється лихоманка або гною стає більше.",
+  ru: "Обратитесь раньше, если покраснение быстро распространяется, боль усиливается, появляется температура или гноя становится больше."
+});
+
+const keratosisPilarisExplain = commonExplain({
+  id: "keratosis pilaris",
+  en: "keratosis pilaris",
+  vi: "dày sừng nang lông",
+  th: "ขนคุดผิวหนัง",
+  ja: "毛孔性苔癬",
+  ko: "모공각화증",
+  uk: "волосяний кератоз",
+  ru: "волосяной кератоз"
+}, {
+  id: "penumpukan keratin di sekitar pori rambut; ini jinak, umum, dan bukan infeksi",
+  en: "keratin buildup around hair follicles; it is benign, common, and not an infection",
+  vi: "keratin tích tụ quanh nang lông; đây là tình trạng lành tính, thường gặp và không phải nhiễm trùng",
+  th: "เคราตินสะสมรอบรูขุมขน เป็นภาวะไม่ร้ายแรง พบบ่อย และไม่ใช่การติดเชื้อ",
+  ja: "毛穴の周りに角質がたまる状態で、良性でよくあり、感染ではありません",
+  ko: "모낭 주변에 각질이 쌓이는 상태로 양성이며 흔하고 감염이 아닙니다",
+  uk: "накопичення кератину навколо волосяних фолікулів; це доброякісно, поширено і не є інфекцією",
+  ru: "накопление кератина вокруг волосяных фолликулов; это доброкачественно, распространено и не является инфекцией"
+});
+
+const keratosisPilarisTreat = commonTreat({
+  id: "pelembap dan obat oles penghalus kulit bila diperlukan; perbaikan biasanya perlahan dan tidak selalu hilang total",
+  en: "moisturizer and smoothing topical medicine if needed; improvement is usually gradual and may not be complete",
+  vi: "dưỡng ẩm và thuốc bôi làm mịn da khi cần; cải thiện thường chậm và có thể không hết hoàn toàn",
+  th: "มอยส์เจอไรเซอร์และยาทาช่วยให้ผิวเรียบเมื่อจำเป็น อาการมักดีขึ้นช้าและอาจไม่หายหมด",
+  ja: "保湿剤や必要に応じた角質を整える外用薬を使います。改善はゆっくりで、完全には消えないこともあります",
+  ko: "보습제와 필요 시 피부를 매끄럽게 하는 바르는 약을 사용합니다. 호전은 보통 천천히 오며 완전히 없어지지 않을 수 있습니다",
+  uk: "зволожувач і за потреби зовнішні засоби для вирівнювання шкіри; покращення зазвичай поступове і може бути неповним",
+  ru: "увлажнитель и при необходимости наружные средства для выравнивания кожи; улучшение обычно постепенное и может быть неполным"
+});
+
+const keratosisPilarisCare = commonCare({
+  id: "Oleskan pelembap secara rutin, terutama setelah mandi. Hindari menggosok keras atau memencet bintil.",
+  en: "Apply moisturizer regularly, especially after bathing. Avoid hard scrubbing or squeezing the bumps.",
+  vi: "Thoa dưỡng ẩm đều đặn, nhất là sau khi tắm. Tránh chà mạnh hoặc nặn các nốt sần.",
+  th: "ทามอยส์เจอไรเซอร์สม่ำเสมอ โดยเฉพาะหลังอาบน้ำ หลีกเลี่ยงการขัดแรงหรือบีบตุ่ม",
+  ja: "入浴後を中心に保湿を続けてください。強くこすったり、ぶつぶつを押し出したりしないでください。",
+  ko: "특히 목욕 후 보습제를 규칙적으로 바르세요. 세게 문지르거나 오돌토돌한 병변을 짜지 마세요.",
+  uk: "Регулярно наносіть зволожувач, особливо після купання. Уникайте сильного тертя або видавлювання горбиків.",
+  ru: "Регулярно наносите увлажнитель, особенно после купания. Избегайте сильного трения или выдавливания бугорков."
+});
+
+const keratosisPilarisWarn = commonWarn({
+  id: "Bila menjadi sangat merah, nyeri, atau tergores sampai infeksi, kontrol kembali.",
+  en: "Come back if it becomes very red, painful, or scratched open with signs of infection.",
+  vi: "Tái khám nếu vùng da rất đỏ, đau hoặc bị gãi trầy có dấu hiệu nhiễm trùng.",
+  th: "กลับมาตรวจถ้าแดงมาก เจ็บ หรือเกาจนเป็นแผลและมีสัญญาณติดเชื้อ",
+  ja: "強い赤み、痛み、掻き壊しによる感染のサインがあれば再診してください。",
+  ko: "매우 붉어지거나 아프거나 긁혀서 감염 징후가 있으면 다시 내원하세요.",
+  uk: "Поверніться, якщо ділянка стає дуже червоною, болючою або розчесана з ознаками інфекції.",
+  ru: "Вернитесь, если участок становится очень красным, болезненным или расчёсан с признаками инфекции."
+});
+
+const cystExplain = commonExplain({
+  id: "kista epidermal yang meradang",
+  en: "inflamed epidermal cyst",
+  vi: "nang biểu bì bị viêm",
+  th: "ซีสต์ผิวหนังอักเสบ",
+  ja: "炎症性表皮嚢腫",
+  ko: "염증성 표피낭종",
+  uk: "запалена епідермальна кіста",
+  ru: "воспалённая эпидермальная киста"
+}, {
+  id: "kantong kecil di bawah kulit yang berisi keratin dan sedang meradang; ini bukan karena kulit kotor",
+  en: "a small keratin-filled sac under the skin that has become inflamed; it is not caused by dirty skin",
+  vi: "một túi nhỏ chứa keratin dưới da đang bị viêm; không phải do da bẩn",
+  th: "ถุงเล็กใต้ผิวหนังที่มีเคราตินและกำลังอักเสบ ไม่ได้เกิดจากผิวสกปรก",
+  ja: "皮膚の下にできた角質を含む小さな袋が炎症を起こした状態です。皮膚が汚いからではありません",
+  ko: "피부 아래의 각질이 든 작은 주머니에 염증이 생긴 상태입니다. 피부가 더러워서 생기는 것은 아닙니다",
+  uk: "невеликий мішечок під шкірою, заповнений кератином, який запалився; це не через брудну шкіру",
+  ru: "небольшой мешочек под кожей, заполненный кератином, который воспалился; это не из-за грязной кожи"
+});
+
+const cystTreat = commonTreat({
+  id: "obat untuk meredakan radang, antibiotik bila diperlukan, atau drainase bila bengkak bernanah; pengangkatan biasanya dinilai setelah radang tenang",
+  en: "medicine to calm inflammation, antibiotics if needed, or drainage if swollen with pus; removal is usually considered after inflammation settles",
+  vi: "thuốc giảm viêm, kháng sinh khi cần hoặc rạch dẫn lưu nếu sưng có mủ; thường đánh giá lấy trọn sau khi viêm lắng xuống",
+  th: "ยาลดอักเสบ ยาปฏิชีวนะเมื่อจำเป็น หรือระบายหนองถ้าบวมมีหนอง โดยมักประเมินการเอาออกหลังอักเสบสงบ",
+  ja: "炎症を抑える薬、必要時の抗菌薬、膿がある場合の排膿を行います。切除は炎症が落ち着いてから判断します",
+  ko: "염증을 가라앉히는 약, 필요 시 항생제, 고름이 차면 배농을 합니다. 제거는 보통 염증이 가라앉은 뒤 평가합니다",
+  uk: "ліки для зменшення запалення, антибіотики за потреби або дренування, якщо є набряк із гноєм; видалення зазвичай оцінюють після стихання запалення",
+  ru: "лекарства для уменьшения воспаления, антибиотики при необходимости или дренирование, если есть отёк с гноем; удаление обычно оценивают после стихания воспаления"
+});
+
+const cystCare = commonCare({
+  id: "Jangan memencet, menusuk, atau memijat kuat karena dapat memperluas radang dan membuat luka.",
+  en: "Do not squeeze, puncture, or massage it hard because this can spread inflammation and create a wound.",
+  vi: "Không nặn, chọc hoặc xoa bóp mạnh vì có thể làm viêm lan rộng và tạo vết thương.",
+  th: "อย่าบีบ เจาะ หรือนวดแรง เพราะอาจทำให้อักเสบลามและเกิดแผล",
+  ja: "押し出したり、刺したり、強く揉んだりしないでください。炎症が広がり、傷になることがあります。",
+  ko: "짜거나 찌르거나 세게 문지르지 마세요. 염증이 퍼지고 상처가 생길 수 있습니다",
+  uk: "Не видавлюйте, не проколюйте і не масажуйте сильно, бо це може поширити запалення і створити рану.",
+  ru: "Не выдавливайте, не прокалывайте и не массируйте сильно, потому что это может распространить воспаление и создать рану."
+});
+
+const cystWarn = commonWarn({
+  id: "Kontrol lebih awal bila nyeri cepat memburuk, kemerahan meluas, demam, atau keluar banyak nanah.",
+  en: "Come back earlier if pain worsens quickly, redness spreads, fever occurs, or a lot of pus drains out.",
+  vi: "Tái khám sớm nếu đau tăng nhanh, đỏ lan rộng, sốt hoặc chảy nhiều mủ.",
+  th: "กลับมาตรวจก่อนนัดถ้าปวดมากขึ้นเร็ว แดงลาม มีไข้ หรือมีหนองออกมาก",
+  ja: "痛みが急に悪化する、赤みが広がる、発熱する、膿が多く出る場合は早めに受診してください。",
+  ko: "통증이 빠르게 심해지거나 붉은 부위가 퍼지거나 열이 나거나 고름이 많이 나오면 더 일찍 내원하세요.",
+  uk: "Зверніться раніше, якщо біль швидко посилюється, почервоніння поширюється, є лихоманка або виходить багато гною.",
+  ru: "Обратитесь раньше, если боль быстро усиливается, покраснение распространяется, есть температура или выходит много гноя."
+});
+
 function item(id, category, titleZh, names, cause, treat, options = {}) {
   return makeCondition({
     id,
@@ -430,11 +684,11 @@ function item(id, category, titleZh, names, cause, treat, options = {}) {
 }
 
 const conditionTemplates = [
-  item("acne_vulgaris", "痤瘡與毛囊相關疾病", "青春痘／痤瘡", { id: "jerawat", en: "acne", vi: "mụn trứng cá", th: "สิว", ja: "にきび", ko: "여드름", uk: "вугри", ru: "акне (угри)" }, causes.pore, treatmentKinds.acne, { severity: "常見慢性皮膚病", tags: ["青春痘", "痤瘡", "粉刺", "毛囊", "發炎", "外用藥"], zhCause: "毛孔阻塞、皮脂分泌、細菌與發炎反應", zhTreat: "治療可能包含外用藥、口服藥與清潔保養調整。外用藥一開始可能乾燥、脫皮或刺刺的，通常會逐漸適應。", zhCare: "請避免擠痘痘，避免過度清潔，使用溫和洗面乳與不易阻塞毛孔的保濕產品。", zhFollow: "青春痘治療通常需要數週到數月。" }),
-  item("folliculitis", "痤瘡與毛囊相關疾病", "毛囊炎", { id: "folikulitis", en: "folliculitis", vi: "viêm nang lông", th: "รูขุมขนอักเสบ", ja: "毛嚢炎", ko: "모낭염", uk: "фолікуліт", ru: "фолликулит" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["毛囊炎", "毛囊", "膿皰", "抗生素"], contagious: true, care: careInfection, warn: returnIfWorseWarn, zhCause: "毛囊受到細菌、摩擦、悶熱或刮毛刺激", zhTreat: "治療可能包含外用抗生素、消炎藥，嚴重時可能需要口服抗生素。", zhWarn: "如果規律用藥後仍持續變多、變痛、化膿或反覆復發，請回診讓醫師重新評估治療方式。" }),
-  item("bacterial_pustules", "痤瘡與毛囊相關疾病", "細菌感染的膿皰", { id: "bintil bernanah karena bakteri", en: "bacterial pustules", vi: "mụn mủ do vi khuẩn", th: "ตุ่มหนองจากแบคทีเรีย", ja: "細菌性膿疱", ko: "세균성 농포", uk: "бактеріальні пустули", ru: "бактериальные пустулы" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["細菌", "膿皰", "化膿", "抗生素"], contagious: true, treat: antibioticCourseTreat, care: careInfection, warn: antibioticCourseWarn, zhCause: "皮膚表層細菌感染與局部發炎", zhTreat: "治療會依範圍與嚴重度使用外用或口服抗生素。若有口服抗生素，請按時、按劑量、把整個療程吃完；就算紅腫消退或膿排出，也不要自行提早停藥。", zhWarn: "不要把剩下的抗生素留到下次用，也不要分給家人或朋友。" }),
-  item("keratosis_pilaris", "痤瘡與毛囊相關疾病", "毛孔角化症", { id: "keratosis pilaris", en: "keratosis pilaris", vi: "dày sừng nang lông", th: "ขนคุดผิวหนัง", ja: "毛孔性苔癬", ko: "모공각화증", uk: "волосяний кератоз", ru: "волосяной кератоз" }, causes.inflammation, treatmentKinds.observe, { tags: ["毛孔角化", "雞皮", "保濕", "角質"], severity: "常見良性皮膚變化", care: careDry, zhCause: "毛孔角質堆積與皮膚乾燥體質", zhTreat: "治療以保濕、溫和去角質或角質調理外用藥為主，不一定能完全根除。", zhWarn: "過度搓洗或用力去角質反而可能更紅、更粗糙。" }),
-  item("inflamed_epidermal_cyst", "痤瘡與毛囊相關疾病", "皮脂腺囊腫／表皮囊腫發炎", { id: "kista epidermal yang meradang", en: "inflamed epidermal cyst", vi: "nang biểu bì bị viêm", th: "ซีสต์ผิวหนังอักเสบ", ja: "炎症性表皮嚢腫", ko: "염증성 표피낭종", uk: "запалена епідермальна кіста", ru: "воспалённая эпидермальная киста" }, causes.inflammation, treatmentKinds.procedure, { tags: ["皮脂腺囊腫", "表皮囊腫", "發炎", "切開", "抗生素"], care: commonCare({ id: "Jangan memencet atau menusuk sendiri karena dapat memperluas peradangan.", en: "Do not squeeze or puncture it yourself, because this can spread the inflammation.", vi: "Không tự nặn hoặc chọc vỡ vì có thể làm viêm lan rộng.", th: "อย่าบีบหรือเจาะเอง เพราะอาจทำให้อักเสบลาม", ja: "自分で押し出したり刺したりしないでください。炎症が広がることがあります。", ko: "직접 짜거나 찌르지 마세요. 염증이 퍼질 수 있습니다.", uk: "Не видавлюйте і не проколюйте самостійно, оскільки це може розширити запалення.", ru: "Не выдавливайте и не прокалывайте самостоятельно, так как это может расширить воспаление." }), follow: commonFollow({ id: "Setelah peradangan mereda, dokter akan menilai apakah perlu operasi pengangkatan.", en: "After the inflammation settles, the doctor will decide whether removal surgery is needed.", vi: "Sau khi viêm ổn định, bác sĩ sẽ đánh giá có cần phẫu thuật lấy trọn hay không.", th: "เมื่ออักเสบสงบแล้ว แพทย์จะประเมินว่าต้องผ่าตัดเอาออกหรือไม่", ja: "炎症が落ち着いてから、切除が必要かどうか判断します。", ko: "염증이 가라앉은 뒤 제거 수술이 필요한지 평가합니다.", uk: "Після стихання запалення лікар оцінить, чи потрібна операція з видалення.", ru: "После стихания воспаления врач оценит, нужна ли операция по удалению." }), zhCause: "囊腫內容物刺激或合併感染發炎", zhTreat: "治療可能包含消炎藥、抗生素、切開引流，穩定後才評估是否完整切除。", zhCare: "急性發炎期請不要自己擠、挑破或用力按摩，否則可能讓發炎範圍擴大或造成傷口感染。", zhFollow: "等發炎消退後，醫師會再評估是否需要安排完整切除。" }),
+  item("acne_vulgaris", "痤瘡與毛囊相關疾病", "青春痘／痤瘡", { id: "jerawat", en: "acne", vi: "mụn trứng cá", th: "สิว", ja: "にきび", ko: "여드름", uk: "вугри", ru: "акне (угри)" }, causes.pore, treatmentKinds.acne, { severity: "常見慢性皮膚病", tags: ["青春痘", "痤瘡", "粉刺", "毛囊", "發炎", "外用藥"], explain: acneExplain, treat: acneTreat, care: acneCare, warn: acneWarn, follow: acneFollow, zhExplain: "這通常和毛孔阻塞、皮脂分泌、皮膚細菌與發炎反應有關，不是單純因為臉沒有洗乾淨。", zhTreat: "治療可能包含外用藥，必要時加上口服藥。明顯改善通常需要 6 到 12 週，前期可能有乾燥、脫皮或輕微刺痛。", zhCare: "請溫和清潔，使用不易阻塞毛孔的保濕與防曬產品，不要擠痘痘。", zhWarn: "如果刺激很嚴重、腫痛明顯、化膿很多或出現藥物過敏，請提早回診。", zhFollow: "請規律回診調整藥物，不要只用前幾天的變化判斷有沒有效。" }),
+  item("folliculitis", "痤瘡與毛囊相關疾病", "毛囊炎", { id: "folikulitis", en: "folliculitis", vi: "viêm nang lông", th: "รูขุมขนอักเสบ", ja: "毛嚢炎", ko: "모낭염", uk: "фолікуліт", ru: "фолликулит" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["毛囊炎", "毛囊", "膿皰", "抗生素"], contagious: true, explain: folliculitisExplain, treat: folliculitisTreat, care: folliculitisCare, warn: returnIfWorseWarn, zhExplain: "這是毛囊周圍發炎，常和汗水、摩擦、悶熱、刮毛或皮膚細菌刺激有關。", zhTreat: "治療可能包含外用藥、抗菌清潔產品，較嚴重時可能需要抗生素。", zhCare: "請保持局部乾爽，減少摩擦，暫時避免刮毛，不要擠膿皰。", zhWarn: "如果疹子變多、變痛、化膿，或照指示用藥後仍沒有改善，請提早回診。" }),
+  item("bacterial_pustules", "痤瘡與毛囊相關疾病", "細菌感染的膿皰", { id: "bintil bernanah karena bakteri", en: "bacterial pustules", vi: "mụn mủ do vi khuẩn", th: "ตุ่มหนองจากแบคทีเรีย", ja: "細菌性膿疱", ko: "세균성 농포", uk: "бактеріальні пустули", ru: "бактериальные пустулы" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["細菌", "膿皰", "化膿", "抗生素"], contagious: true, explain: pustuleExplain, treat: antibioticCourseTreat, care: pustuleCare, warn: pustuleWarn, zhExplain: "這是皮膚表層的細菌感染，可能出現紅、腫、痛或膿皰。", zhTreat: "治療會依範圍與嚴重度使用外用或口服抗生素。若有口服抗生素，請按時、按劑量、把整個療程吃完；就算紅腫消退或膿排出，也不要自行提早停藥。", zhCare: "不要擠膿或摳破。碰到病灶後請洗手，也不要共用毛巾。", zhWarn: "如果紅腫快速擴大、疼痛加重、發燒或膿變多，請提早回診。" }),
+  item("keratosis_pilaris", "痤瘡與毛囊相關疾病", "毛孔角化症", { id: "keratosis pilaris", en: "keratosis pilaris", vi: "dày sừng nang lông", th: "ขนคุดผิวหนัง", ja: "毛孔性苔癬", ko: "모공각화증", uk: "волосяний кератоз", ru: "волосяной кератоз" }, causes.inflammation, treatmentKinds.observe, { tags: ["毛孔角化", "雞皮", "保濕", "角質"], severity: "常見良性皮膚變化", explain: keratosisPilarisExplain, treat: keratosisPilarisTreat, care: keratosisPilarisCare, warn: keratosisPilarisWarn, zhExplain: "這是毛孔周圍角質堆積造成的小顆粒，常見、良性，不是感染，也不是清潔不夠。", zhTreat: "治療以規律保濕和必要時角質調理外用藥為主，改善通常比較慢，也不一定會完全消失。", zhCare: "請規律保濕，尤其洗澡後要擦。避免用力搓洗、刷洗或擠小顆粒。", zhWarn: "如果變得很紅、疼痛，或抓破後有感染跡象，請回診。" }),
+  item("inflamed_epidermal_cyst", "痤瘡與毛囊相關疾病", "皮脂腺囊腫／表皮囊腫發炎", { id: "kista epidermal yang meradang", en: "inflamed epidermal cyst", vi: "nang biểu bì bị viêm", th: "ซีสต์ผิวหนังอักเสบ", ja: "炎症性表皮嚢腫", ko: "염증성 표피낭종", uk: "запалена епідермальна кіста", ru: "воспалённая эпидермальная киста" }, causes.inflammation, treatmentKinds.procedure, { tags: ["皮脂腺囊腫", "表皮囊腫", "發炎", "切開", "抗生素"], explain: cystExplain, treat: cystTreat, care: cystCare, warn: cystWarn, follow: commonFollow({ id: "Setelah peradangan mereda, dokter akan menilai apakah kista perlu diangkat.", en: "After the inflammation settles, the doctor will decide whether the cyst should be removed.", vi: "Sau khi viêm ổn định, bác sĩ sẽ đánh giá có cần lấy nang hay không.", th: "เมื่ออักเสบสงบแล้ว แพทย์จะประเมินว่าควรเอาซีสต์ออกหรือไม่", ja: "炎症が落ち着いてから、嚢腫を取る必要があるか判断します。", ko: "염증이 가라앉은 뒤 낭종 제거가 필요한지 평가합니다.", uk: "Після стихання запалення лікар оцінить, чи потрібно видаляти кісту.", ru: "После стихания воспаления врач оценит, нужно ли удалять кисту." }), zhExplain: "這是皮膚下方裝著角質的小囊袋發炎，不是因為皮膚髒造成。", zhTreat: "治療可能包含消炎藥、必要時抗生素，或在腫脹化膿時引流。是否完整切除通常等發炎消退後再評估。", zhCare: "請不要自己擠、刺破或用力按摩，否則可能讓發炎擴大或形成傷口。", zhWarn: "如果疼痛快速加重、紅腫擴大、發燒或流出很多膿，請提早回診。", zhFollow: "等發炎消退後，醫師會再評估囊腫是否需要處理。" }),
 
   item("rosacea", "慢性發炎性皮膚病", "酒糟／玫瑰斑", { id: "rosacea", en: "rosacea", vi: "trứng cá đỏ", th: "โรซาเซีย", ja: "酒さ", ko: "주사 피부염", uk: "розацеа", ru: "розацеа" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "常見慢性發炎性皮膚病", tags: ["酒糟", "玫瑰斑", "臉紅", "丘疹", "敏感"], follow: followLong, care: commonCare({ id: "Gunakan tabir surya dan hindari pemicu seperti panas, alkohol, makanan pedas, sinar matahari, dan produk yang menyengat.", en: "Use sunscreen and avoid triggers such as heat, alcohol, spicy food, sunlight, and stinging products.", vi: "Dùng kem chống nắng và tránh nóng, rượu, đồ cay, nắng, sản phẩm gây châm chích.", th: "ใช้กันแดดและหลีกเลี่ยงความร้อน แอลกอฮอล์ อาหารเผ็ด แดด และผลิตภัณฑ์ที่แสบผิว", ja: "日焼け止めを使い、熱、アルコール、辛い食べ物、日光、しみる製品を避けてください。", ko: "자외선 차단제를 사용하고 열, 술, 매운 음식, 햇빛, 따가운 제품을 피하세요.", uk: "Користуйтеся сонцезахисним кремом і уникайте тригерів, таких як тепло, алкоголь, гостра їжа, сонячне світло і подразнюючі засоби.", ru: "Используйте солнцезащитный крем и избегайте триггеров, таких как тепло, алкоголь, острая пища, солнечный свет и раздражающие средства." }), warn: commonWarn({ id: "Bila mata merah, perih, kering, atau terasa mengganjal, beri tahu dokter.", en: "If your eyes become red, stinging, dry, or gritty, tell the doctor.", vi: "Nếu mắt đỏ, rát, khô hoặc cộm, hãy báo cho bác sĩ.", th: "ถ้าตาแดง แสบ แห้ง หรือเหมือนมีสิ่งแปลกปลอม ให้แจ้งแพทย์", ja: "目の赤み、しみる感じ、乾燥、異物感があれば医師に伝えてください。", ko: "눈이 붉거나 따갑거나 건조하거나 이물감이 있으면 의사에게 알려주세요.", uk: "Якщо очі почервоніли, відчуваєте печіння, сухість або сторонній предмет, повідомте лікаря.", ru: "Если глаза покраснели, чувствуете жжение, сухость или инородный предмет, сообщите врачу." }), zhCause: "臉部血管反應、皮膚敏感與發炎", zhTreat: "治療可能包含外用藥、口服藥與保養調整。酒糟容易反覆，重點是控制發炎與減少誘發。", zhCare: "防曬是治療的一部分。請避免酒精、辛辣、悶熱、三溫暖與刺激性保養品。臉上的藥膏請依醫師指示，不要自行長期擦不明藥膏。", zhWarn: "如果眼睛紅、刺、乾澀或有異物感，請回診告知醫師。" }),
   item("psoriasis", "慢性發炎性皮膚病", "乾癬", { id: "psoriasis", en: "psoriasis", vi: "vảy nến", th: "สะเก็ดเงิน", ja: "乾癬", ko: "건선", uk: "псоріаз", ru: "псориаз" }, causes.inflammation, treatmentKinds.antiInflammatory, { severity: "慢性免疫相關皮膚病", tags: ["乾癬", "脫屑", "免疫", "慢性", "類固醇"], follow: followLong, zhCause: "免疫反應造成皮膚更新過快與發炎", zhTreat: "治療可能包含外用藥、照光、口服或注射藥物，依嚴重度調整。", zhWarn: "若有關節疼痛、指甲變形或皮疹快速惡化，請告知醫師。" }),
