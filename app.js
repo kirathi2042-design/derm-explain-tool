@@ -452,7 +452,7 @@ function showToast(message) {
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js").catch(() => {
+      navigator.serviceWorker.register("./service-worker.js?v=20260529-tinea-manuum").catch(() => {
         console.info("Service worker registration failed.");
       });
     });
@@ -481,7 +481,7 @@ async function forceUpdate() {
     console.warn("Force update cleanup failed:", error);
   }
 
-  const url = new URL(window.location.href);
+  const url = new URL(window.location.origin + window.location.pathname);
   url.searchParams.set("_t", Date.now().toString());
   window.location.replace(url.toString());
 }

@@ -1,13 +1,14 @@
 "use strict";
 
-const CACHE_NAME = "derm-explain-tool-v9";
+const ASSET_VERSION = "20260529-tinea-manuum";
+const CACHE_NAME = "derm-explain-tool-v10";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css",
-  "./app.js",
-  "./conditions.js",
-  "./manifest.json"
+  `./style.css?v=${ASSET_VERSION}`,
+  `./app.js?v=${ASSET_VERSION}`,
+  `./conditions.js?v=${ASSET_VERSION}`,
+  `./manifest.json?v=${ASSET_VERSION}`
 ];
 
 self.addEventListener("install", (event) => {
