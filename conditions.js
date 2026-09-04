@@ -883,6 +883,21 @@ function item(id, category, titleZh, names, cause, treat, options = {}) {
   });
 }
 
+// Corn care: https://www.aad.org/public/everyday-care/injured-skin/burns/treat-corns-calluses
+// Procedure only, not a routine indication: https://www.asph.nhs.uk/leaflets/3451-dermatology-leaflet-cryotherapy
+// Included in the read-aloud text only when the clinician selects cryotherapy.
+const cornCryotherapyText = {
+  zh: "這次會使用冷凍治療處理雞眼。醫師會用噴霧或棉棒，將很低溫的液態氮短暫施加在病灶上，使局部組織冷凍。當下可能刺痛，之後可能紅腫、起水泡或結痂。請保持清潔，不要自行刺破水泡或撕痂。冷凍後仍要減少壓迫，才能減少復發。",
+  id: "Kali ini mata ikan akan ditangani dengan terapi beku. Dokter akan menyemprotkan atau mengoleskan nitrogen cair yang sangat dingin dengan kapas bertangkai sebentar pada lesi untuk membekukan jaringan setempat. Saat tindakan mungkin terasa perih; setelahnya dapat timbul kemerahan, bengkak, lepuh, atau keropeng. Jaga kebersihannya dan jangan pecahkan lepuh atau kelupas keropeng sendiri. Tetap kurangi tekanan setelah terapi agar tidak mudah kambuh.",
+  en: "This time, we will use cryotherapy to treat the corn. The doctor will briefly apply very cold liquid nitrogen with a spray or cotton bud to freeze the local tissue. It may sting, and redness, swelling, a blister, or a scab may follow. Keep the area clean and do not pop blisters or pick scabs. Reducing pressure is still important after treatment to help prevent recurrence.",
+  vi: "Lần này, chúng tôi sẽ điều trị mắt cá ở chân bằng phương pháp áp lạnh. Bác sĩ dùng bình xịt hoặc tăm bông đưa nitơ lỏng rất lạnh lên tổn thương trong thời gian ngắn để làm đông mô tại chỗ. Bạn có thể thấy đau rát khi làm; sau đó có thể đỏ, sưng, phồng rộp hoặc đóng mày. Giữ sạch vùng điều trị, không tự chọc vỡ bóng nước hay bóc mày. Sau điều trị vẫn cần giảm tì đè để hạn chế tái phát.",
+  th: "ครั้งนี้จะรักษาตาปลาด้วยการจี้เย็น แพทย์จะพ่นหรือใช้ก้านสำลีแตะไนโตรเจนเหลวที่เย็นจัดลงบนรอยโรคช่วงสั้น ๆ เพื่อให้เนื้อเยื่อเฉพาะจุดแข็งตัว อาจรู้สึกแสบขณะทำ และหลังทำอาจแดง บวม มีตุ่มน้ำหรือตกสะเก็ด รักษาความสะอาด อย่าเจาะตุ่มน้ำหรือแกะสะเก็ดเอง หลังรักษายังต้องลดแรงกดเพื่อช่วยป้องกันการกลับเป็นซ้ำ",
+  ja: "今回は、うおのめを冷凍療法で処置します。医師がスプレーや綿棒で非常に冷たい液体窒素を短時間当て、患部の組織を凍らせます。処置中はしみることがあり、その後に赤み、腫れ、水ぶくれ、かさぶたができることがあります。清潔に保ち、水ぶくれを自分でつぶしたり、かさぶたをはがしたりしないでください。再発を減らすため、処置後も圧迫を減らすことが大切です。",
+  ko: "이번에는 냉동치료로 티눈을 치료하겠습니다. 의사가 스프레이나 면봉으로 매우 차가운 액체질소를 병변에 잠깐 대어 해당 조직을 얼립니다. 시술 중 따가울 수 있고 이후 붉어짐, 부기, 물집이나 딱지가 생길 수 있습니다. 깨끗하게 유지하고 물집을 직접 터뜨리거나 딱지를 떼지 마세요. 재발을 줄이려면 치료 후에도 압박을 줄여야 합니다.",
+  uk: "Цього разу ми обробимо стрижневий мозоль методом заморожування. Лікар ненадовго нанесе дуже холодний рідкий азот розпилювачем або ватною паличкою, щоб заморозити тканину в цій ділянці. Під час процедури може пекти, а після неї можливі почервоніння, набряк, пухир або кірочка. Тримайте ділянку чистою, не проколюйте пухирі й не здирайте кірочки. Після лікування й надалі зменшуйте тиск, щоб знизити ризик повторної появи мозоля.",
+  ru: "В этот раз мы обработаем стержневую мозоль методом замораживания. Врач ненадолго нанесёт очень холодный жидкий азот распылителем или ватной палочкой, чтобы заморозить ткань в этом месте. Во время процедуры может щипать, а после неё возможны покраснение, отёк, пузырь или корочка. Держите участок чистым, не прокалывайте пузыри и не сдирайте корочки. После лечения продолжайте уменьшать давление, чтобы снизить риск повторного появления мозоли."
+};
+
 const conditionTemplates = [
   item("acne_vulgaris", "痤瘡與毛囊相關疾病", "青春痘／痤瘡", { id: "jerawat", en: "acne", vi: "mụn trứng cá", th: "สิว", ja: "にきび", ko: "여드름", uk: "вугри", ru: "акне (угри)" }, causes.pore, treatmentKinds.acne, { severity: "常見慢性皮膚病", tags: ["青春痘", "痤瘡", "粉刺", "毛囊", "發炎", "外用藥"], explain: acneExplain, treat: acneTreat, care: acneCare, warn: acneWarn, follow: acneFollow, zhExplain: "這通常和毛孔阻塞、皮脂分泌、皮膚細菌與發炎反應有關，不是單純因為臉沒有洗乾淨。", zhTreat: "治療可能包含外用藥，必要時加上口服藥。明顯改善通常需要 6 到 12 週，前期可能有乾燥、脫皮或輕微刺痛。", zhCare: "請溫和清潔，使用不易阻塞毛孔的保濕與防曬產品，不要擠痘痘。", zhWarn: "如果刺激很嚴重、腫痛明顯、化膿很多或出現藥物過敏，請提早回診。", zhFollow: "請規律回診調整藥物，不要只用前幾天的變化判斷有沒有效。" }),
   item("folliculitis", "痤瘡與毛囊相關疾病", "毛囊炎", { id: "folikulitis", en: "folliculitis", vi: "viêm nang lông", th: "รูขุมขนอักเสบ", ja: "毛嚢炎", ko: "모낭염", uk: "фолікуліт", ru: "фолликулит" }, causes.bacteria, treatmentKinds.antibiotic, { tags: ["毛囊炎", "毛囊", "膿皰", "抗生素"], contagious: true, explain: folliculitisExplain, treat: folliculitisTreat, care: folliculitisCare, warn: returnIfWorseWarn, zhExplain: "這是毛囊周圍發炎，常和汗水、摩擦、悶熱、刮毛或皮膚細菌刺激有關。", zhTreat: "治療可能包含外用藥、抗菌清潔產品，較嚴重時可能需要抗生素。", zhCare: "請保持局部乾爽，減少摩擦，暫時避免刮毛，不要擠膿皰。", zhWarn: "如果疹子變多、變痛、化膿，或照指示用藥後仍沒有改善，請提早回診。" }),
@@ -940,6 +955,86 @@ const conditionTemplates = [
   item("vitiligo", "色素與良性皮膚變化", "白斑／白癜風", { id: "vitiligo", en: "vitiligo", vi: "bạch biến", th: "ด่างขาว", ja: "白斑", ko: "백반증", uk: "вітиліго", ru: "витилиго" }, causes.pigment, treatmentKinds.antiInflammatory, { tags: ["白斑", "白癜風", "色素", "免疫"], ...vitiligoEducation }),
   item("seborrheic_keratosis", "色素與良性皮膚變化", "脂漏性角化症", { id: "keratosis seboroik", en: "seborrheic keratosis", vi: "dày sừng tiết bã", th: "กระเนื้อ", ja: "脂漏性角化症", ko: "지루각화증", uk: "себорейний кератоз", ru: "себорейный кератоз" }, causes.pigment, treatmentKinds.observe, { tags: ["脂漏性角化", "老人斑", "良性", "冷凍"], severity: "常見良性皮膚腫瘤", ...seborrheicKeratosisEducation }),
   item("dermatofibroma", "色素與良性皮膚變化", "皮膚纖維瘤", { id: "dermatofibroma", en: "dermatofibroma", vi: "u xơ da", th: "ก้อนพังผืดผิวหนัง", ja: "皮膚線維腫", ko: "피부섬유종", uk: "дерматофіброма", ru: "дерматофиброма" }, causes.pigment, treatmentKinds.observe, { tags: ["皮膚纖維瘤", "良性", "硬塊"], severity: "常見良性皮膚結節", ...dermatofibromaEducation }),
+  item("corns", "色素與良性皮膚變化", "雞眼", { id: "mata ikan", en: "corns", vi: "mắt cá ở chân", th: "ตาปลา", ja: "うおのめ", ko: "티눈", uk: "стрижневий мозоль", ru: "стержневая мозоль" }, causes.inflammation, treatmentKinds.procedure, {
+    severity: "常見良性角質增厚",
+    tags: ["雞眼", "足底", "腳趾", "角質", "摩擦", "壓迫", "減壓", "冷凍", "corn", "corns", "clavus"],
+    contagious: false,
+    typicalFollowUp: "若持續疼痛、影響走路或反覆長出，請回診。",
+    customZh: {
+      summary: "這是雞眼，是局部皮膚變厚、形成硬芯的狀況。",
+      explanation: "常長在腳趾或腳底反覆受壓、摩擦的位置，走路或按壓時可能疼痛。不是病毒感染，也不會傳染。",
+      treatment: "治療重點是減少壓迫與摩擦。醫師可修除過厚的角質，必要時使用軟化角質的藥物。若持續受壓，治療後仍可能再長出來。",
+      homeCare: "請穿合腳、鞋頭寬鬆的鞋子，必要時使用減壓墊。不要自行剪、挖或削雞眼；有糖尿病、腳麻或循環不良時，請勿自行使用雞眼貼或腐蝕性藥水。",
+      warning: "若疼痛加劇、紅腫擴大、流膿或有傷口不癒合，請提早回診。",
+      followUp: "若持續疼痛、影響走路或反覆長出，請回診。改善後仍要維持減壓，減少復發。"
+    },
+    customTranslations: {
+      id: {
+        summary: "Ini adalah mata ikan, yaitu penebalan kulit setempat dengan bagian tengah yang keras.",
+        explanation: "Biasanya muncul di jari atau telapak kaki yang sering mendapat tekanan atau gesekan, dan dapat terasa sakit saat berjalan atau ditekan. Ini bukan infeksi virus dan tidak menular.",
+        treatment: "Yang utama adalah mengurangi tekanan dan gesekan. Dokter dapat menipiskan kulit yang terlalu tebal dan, bila perlu, memberikan obat pelunak kulit. Jika tekanan berlanjut, mata ikan dapat tumbuh kembali setelah pengobatan.",
+        homeCare: "Gunakan sepatu yang pas dengan ruang jari yang cukup, serta bantalan pengurang tekanan bila perlu. Jangan potong, korek, atau kikis mata ikan sendiri. Jika Anda memiliki diabetes, kaki kebas, atau aliran darah kurang baik, jangan gunakan plester mata ikan atau cairan pengikis kulit sendiri.",
+        warning: "Kontrol lebih awal jika nyeri bertambah, kemerahan atau bengkak meluas, keluar nanah, atau luka tidak sembuh.",
+        followUp: "Kontrol kembali jika nyeri menetap, sulit berjalan, atau mata ikan terus muncul. Setelah membaik, tetap kurangi tekanan agar tidak mudah kambuh."
+      },
+      en: {
+        summary: "This is a corn, a small area of thickened skin with a hard centre.",
+        explanation: "Corns often form on toes or the sole where there is repeated pressure or rubbing. They can hurt when you walk or press on them. They are not caused by a virus and are not contagious.",
+        treatment: "The main treatment is to reduce pressure and rubbing. The doctor may trim the thick skin and prescribe a skin-softening medicine if needed. A corn can return after treatment if the pressure continues.",
+        homeCare: "Wear well-fitting shoes with room for your toes and use pressure-relieving pads if needed. Do not cut, dig out, or shave the corn yourself. If you have diabetes, numb feet, or poor circulation, do not use medicated corn plasters or acid treatments on your own.",
+        warning: "Come back sooner if pain increases, redness or swelling spreads, pus appears, or a wound does not heal.",
+        followUp: "Return if pain persists, walking is difficult, or the corn keeps coming back. Keep reducing pressure even after it improves to help prevent recurrence."
+      },
+      vi: {
+        summary: "Đây là mắt cá ở chân, một vùng da dày lên với nhân cứng ở giữa.",
+        explanation: "Tổn thương thường xuất hiện ở ngón chân hoặc lòng bàn chân do bị tì đè hay cọ xát lặp lại, có thể đau khi đi lại hoặc ấn vào. Bệnh không do vi rút và không lây.",
+        treatment: "Điều quan trọng nhất là giảm tì đè và cọ xát. Bác sĩ có thể gọt bớt lớp da quá dày và dùng thuốc làm mềm da khi cần. Nếu vẫn bị tì đè, tổn thương có thể mọc lại sau điều trị.",
+        homeCare: "Mang giày vừa chân, phần mũi rộng và dùng miếng đệm giảm áp lực khi cần. Không tự cắt, khoét hay gọt tổn thương. Nếu có tiểu đường, tê chân hoặc tuần hoàn kém, không tự dùng miếng dán mắt cá hay dung dịch ăn mòn da.",
+        warning: "Tái khám sớm nếu đau tăng, vùng đỏ hoặc sưng lan rộng, chảy mủ hoặc vết thương không lành.",
+        followUp: "Tái khám nếu vẫn đau, khó đi lại hoặc tổn thương tái phát nhiều lần. Dù đã đỡ, vẫn cần giảm tì đè để hạn chế tái phát."
+      },
+      th: {
+        summary: "นี่คือตาปลา เป็นผิวหนังที่หนาขึ้นเฉพาะจุดและมีแกนแข็งตรงกลาง",
+        explanation: "มักเกิดที่นิ้วเท้าหรือฝ่าเท้าบริเวณที่ถูกกดหรือเสียดสีซ้ำ ๆ อาจเจ็บเวลาเดินหรือกด ไม่ได้เกิดจากไวรัสและไม่ติดต่อ",
+        treatment: "การรักษาหลักคือการลดแรงกดและการเสียดสี แพทย์อาจตัดแต่งผิวหนังที่หนาเกินออก และใช้ยาทำให้ผิวนุ่มลงเมื่อจำเป็น หากยังมีแรงกด ตาปลาอาจกลับมาได้หลังรักษา",
+        homeCare: "ใส่รองเท้าที่พอดีและมีหัวรองเท้ากว้าง ใช้แผ่นรองลดแรงกดเมื่อจำเป็น อย่าตัด แคะ หรือเฉือนตาปลาเอง หากเป็นเบาหวาน เท้าชา หรือเลือดไหลเวียนไม่ดี อย่าใช้แผ่นแปะตาปลาที่มียาหรือน้ำยากัดผิวเอง",
+        warning: "กลับมาตรวจก่อนนัดหากปวดมากขึ้น รอยแดงหรือบวมลาม มีหนอง หรือแผลไม่หาย",
+        followUp: "กลับมาตรวจหากยังปวด เดินลำบาก หรือเป็นซ้ำบ่อย แม้อาการดีขึ้นแล้วก็ยังต้องลดแรงกดเพื่อช่วยป้องกันการกลับเป็นซ้ำ"
+      },
+      ja: {
+        summary: "これはうおのめです。皮膚の一部が厚くなり、中心に硬い芯ができた状態です。",
+        explanation: "足の指や足裏など、圧迫や摩擦が繰り返される場所にできやすく、歩いたり押したりすると痛むことがあります。ウイルス感染ではなく、人にうつりません。",
+        treatment: "治療の基本は、圧迫と摩擦を減らすことです。医師が厚い角質を削り、必要に応じて角質を軟らかくする薬を使います。圧迫が続くと、治療後も再発することがあります。",
+        homeCare: "足に合った、つま先に余裕のある靴を履き、必要に応じて圧迫を減らすパッドを使ってください。自分で切ったり、ほじったり、削ったりしないでください。糖尿病、足のしびれ、血行不良がある方は、自己判断でうおのめ用の薬付きパッドや角質を溶かす薬を使わないでください。",
+        warning: "痛みが強くなる、赤みや腫れが広がる、膿が出る、傷が治らない場合は、早めに受診してください。",
+        followUp: "痛みが続く、歩きにくい、何度も再発する場合は再診してください。改善後も圧迫を減らすことで、再発を防ぎやすくなります。"
+      },
+      ko: {
+        summary: "이것은 티눈으로, 피부 일부가 두꺼워지면서 가운데에 단단한 심이 생긴 상태입니다.",
+        explanation: "주로 발가락이나 발바닥처럼 압박과 마찰이 반복되는 곳에 생기며, 걷거나 누를 때 아플 수 있습니다. 바이러스 감염이 아니며 전염되지 않습니다.",
+        treatment: "치료의 핵심은 압박과 마찰을 줄이는 것입니다. 의사가 두꺼운 각질을 제거하고 필요하면 각질을 부드럽게 하는 약을 사용합니다. 압박이 계속되면 치료 후에도 다시 생길 수 있습니다.",
+        homeCare: "발에 잘 맞고 앞부분이 넉넉한 신발을 신고 필요하면 압박을 줄이는 패드를 사용하세요. 티눈을 직접 자르거나 파내거나 깎지 마세요. 당뇨병, 발의 감각 저하, 혈액순환 문제가 있으면 티눈 약이 든 밴드나 피부를 녹이는 약을 임의로 사용하지 마세요.",
+        warning: "통증이 심해지거나 붉어짐과 부기가 번지거나 고름이 나거나 상처가 낫지 않으면 일찍 내원하세요.",
+        followUp: "통증이 지속되거나 걷기 어렵거나 반복해서 생기면 다시 내원하세요. 좋아진 뒤에도 압박을 줄여야 재발을 줄일 수 있습니다."
+      },
+      uk: {
+        summary: "Це стрижневий мозоль: невелика ділянка потовщеної шкіри з твердим центром.",
+        explanation: "Він часто утворюється на пальцях ніг або підошві в місцях постійного тиску чи тертя. Може боліти під час ходьби або натискання. Це не вірусна інфекція, і вона не заразна.",
+        treatment: "Головне в лікуванні — зменшити тиск і тертя. Лікар може видалити надлишок потовщеної шкіри та за потреби призначити засіб для її розм'якшення. Якщо тиск зберігається, мозоль може з'явитися знову після лікування.",
+        homeCare: "Носіть взуття відповідного розміру з достатнім місцем для пальців; за потреби використовуйте захисні подушечки для зменшення тиску. Не вирізайте й не зішкрібайте мозоль самостійно. Якщо у вас діабет, оніміння стоп або порушений кровообіг, не використовуйте самостійно лікувальні пластирі від мозолів чи кислотні засоби.",
+        warning: "Зверніться раніше, якщо біль посилюється, почервоніння чи набряк поширюються, з'являється гній або рана не загоюється.",
+        followUp: "Прийдіть повторно, якщо біль не минає, важко ходити або мозоль постійно з'являється знову. Навіть після покращення зменшуйте тиск, щоб запобігати повторній появі."
+      },
+      ru: {
+        summary: "Это стержневая мозоль: небольшой участок утолщённой кожи с твёрдым центром.",
+        explanation: "Она часто появляется на пальцах ног или подошве в местах постоянного давления или трения. Может болеть при ходьбе или надавливании. Это не вирусная инфекция, и она не заразна.",
+        treatment: "Главное в лечении — уменьшить давление и трение. Врач может удалить избыток утолщённой кожи и при необходимости назначить средство для её размягчения. Если давление сохраняется, мозоль может появиться снова после лечения.",
+        homeCare: "Носите подходящую по размеру обувь с достаточным местом для пальцев; при необходимости используйте защитные подушечки для уменьшения давления. Не вырезайте и не соскабливайте мозоль самостоятельно. Если у вас диабет, онемение стоп или нарушено кровообращение, не используйте самостоятельно лечебные мозольные пластыри или кислотные средства.",
+        warning: "Обратитесь раньше, если боль усиливается, покраснение или отёк распространяются, появляется гной или рана не заживает.",
+        followUp: "Придите повторно, если боль не проходит, трудно ходить или мозоль постоянно появляется снова. Даже после улучшения уменьшайте давление, чтобы предотвратить её повторное появление."
+      }
+    }
+  }),
 
   item("alopecia_areata", "頭皮與掉髮", "圓形禿", { id: "alopecia areata", en: "alopecia areata", vi: "rụng tóc từng mảng", th: "ผมร่วงเป็นหย่อม", ja: "円形脱毛症", ko: "원형탈모", uk: "вогнищева алопеція", ru: "очаговая алопеция" }, causes.hair, treatmentKinds.antiInflammatory, {
     tags: ["圓形禿", "掉髮", "免疫", "頭皮", "壓力", "類固醇", "Minoxidil"], follow: followLong,

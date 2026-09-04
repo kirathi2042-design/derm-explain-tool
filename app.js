@@ -21,6 +21,7 @@ const state = {
   oralFrequency: "",
   ointmentPlan: "",
   acneOintments: [],
+  cornCryotherapy: false,
   followUpDays: ""
 };
 
@@ -218,6 +219,7 @@ function renderConditionList() {
   els.conditionList.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
       state.selectedConditionId = button.dataset.conditionId;
+      if (state.selectedConditionId !== "corns") state.cornCryotherapy = false;
       if (state.selectedConditionId !== "acne_vulgaris") state.acneOintments = [];
       renderConditionList();
       renderTreatmentControls();
@@ -232,6 +234,13 @@ function renderTreatmentControls() {
   const isAcne = selected?.id === "acne_vulgaris";
 
   els.treatmentControls.innerHTML = `
+    ${selected?.id === "corns" ? `
+    <div class="control-group">
+      <h3>雞眼治療</h3>
+      <div class="option-grid">
+        ${treatmentButton("cornCryotherapy", { id: "cryotherapy", label: "冷凍治療" }, state.cornCryotherapy)}
+      </div>
+    </div>` : ""}
     <div class="control-group">
       <h3>口服藥頻次</h3>
       <div class="option-grid">
@@ -273,6 +282,9 @@ function treatmentButton(group, option, pressed, disabled = false) {
 }
 
 function handleTreatmentOption(group, value) {
+  if (group === "cornCryotherapy" && getSelectedCondition()?.id === "corns") {
+    state.cornCryotherapy = !state.cornCryotherapy;
+  }
   if (group === "oral") state.oralFrequency = state.oralFrequency === value ? "" : value;
   if (group === "ointment") state.ointmentPlan = state.ointmentPlan === value ? "" : value;
   if (group === "follow") state.followUpDays = state.followUpDays === value ? "" : value;
@@ -369,6 +381,9 @@ function buildBilingualText() {
 function buildTreatmentAddendum(languageCode) {
   const phrase = treatmentPhrase[languageCode];
   const lines = [];
+  if (getSelectedCondition()?.id === "corns" && state.cornCryotherapy) {
+    lines.push(cornCryotherapyText[languageCode]);
+  }
   if (state.oralFrequency) lines.push(phrase.oral[state.oralFrequency]);
   if (state.ointmentPlan) lines.push(phrase.ointment[state.ointmentPlan]);
   state.acneOintments.forEach((id) => lines.push(phrase.acne[id]));
@@ -434,6 +449,7 @@ function clearOutput() {
   state.oralFrequency = "";
   state.ointmentPlan = "";
   state.acneOintments = [];
+  state.cornCryotherapy = false;
   state.followUpDays = "";
   els.searchInput.value = "";
   renderConditionList();
@@ -452,7 +468,7 @@ function showToast(message) {
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js?v=20260529-tinea-manuum").catch(() => {
+      navigator.serviceWorker.register("./service-worker.js?v=20260905-corns").catch(() => {
         console.info("Service worker registration failed.");
       });
     });

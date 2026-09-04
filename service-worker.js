@@ -1,7 +1,7 @@
 "use strict";
 
-const ASSET_VERSION = "20260529-tinea-manuum";
-const CACHE_NAME = "derm-explain-tool-v10";
+const ASSET_VERSION = "20260905-corns";
+const CACHE_NAME = "derm-explain-tool-v11";
 const APP_SHELL = [
   "./",
   "./index.html",
